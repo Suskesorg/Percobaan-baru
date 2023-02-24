@@ -346,8 +346,15 @@ sudo certbot --nginx --redirect
 
 
 
-
+# Uninstall Node
 ```
+sudo systemctl stop nolusd
+sudo systemctl disable nolusd
+sudo rm /etc/systemd/system/nolusd.service
+sudo systemctl daemon-reload
+rm -f $(which nolusd)
+rm -rf $HOME/.nolus
+rm -rf $HOME/nolus-core
 
 ```
 
