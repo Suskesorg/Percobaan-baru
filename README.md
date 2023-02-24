@@ -78,12 +78,21 @@ sudo systemctl enable nolusd
 # Initialize the node
 ## Set node configuration
 ```
+nolusd config chain-id nolus-rila
+nolusd config keyring-backend test
+nolusd config node tcp://localhost:43657
+```
 ## Initialize the node
 ```
 nolusd init $MONIKER --chain-id nolus-rila
 ```
+
 ## Download genesis and addrbook
 ```
+curl -Ls https://snapshots.kjnodes.com/nolus-testnet/genesis.json > $HOME/.nolus/config/genesis.json
+curl -Ls https://snapshots.kjnodes.com/nolus-testnet/addrbook.json > $HOME/.nolus/config/addrbook.json
+```
+
 ## Add seeds
 ```
 sed -i -e "s|^seeds *=.*|seeds = \"3f472746f46493309650e5a033076689996c8881@nolus-testnet.rpc.kjnodes.com:43659\"|" $HOME/.nolus/config/config.toml
