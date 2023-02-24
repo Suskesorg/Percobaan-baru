@@ -74,7 +74,8 @@ EOF
 sudo systemctl daemon-reload
 sudo systemctl enable nolusd
 ```
-#Initialize the node
+
+# Initialize the node
 ## Set node configuration
 ```
 ## Initialize the node
