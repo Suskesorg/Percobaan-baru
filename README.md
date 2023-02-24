@@ -241,7 +241,7 @@ server {
         proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
         proxy_set_header   Host             $host;
 
-        proxy_pass http://;
+        proxy_pass http://0.0.0.0:43317;
 
     }
 }
@@ -265,16 +265,35 @@ server {
         proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
         proxy_set_header   Host             $host;
 
-         proxy_pass http://;
+         proxy_pass http://127.0.0.1:43657;
 
     }
 }
 ```
 
+### Setting GRPC
+Pastikan untuk merubah nama domainmu
 ```
-
+nano /etc/nginx/sites-enabled/grpc.nolus.<namadomainmu>.conf
 ```
+```
+server {
+    server_name grpc.nolus.<namadomainmu>;
+    listen 80;
+    location / {
+        add_header Access-Control-Allow-Origin *;
+        add_header Access-Control-Max-Age 3600;
+        add_header Access-Control-Expose-Headers Content-Length;
 
+	proxy_set_header   X-Real-IP        $remote_addr;
+        proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
+        proxy_set_header   Host             $host;
+
+         proxy_pass http://0.0.0.0:43090;
+
+    }
+}
+```
 
 
 
