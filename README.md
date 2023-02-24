@@ -1,4 +1,5 @@
-## Setup validator name
+# Setup validator name
+## Set env
 ```
 MONIKER="YOUR_MONIKER_GOES_HERE"
 ```
