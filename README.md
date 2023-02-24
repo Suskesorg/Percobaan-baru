@@ -296,9 +296,10 @@ server {
 ```
 
 
-
+### Memasang ssl
 ```
-
+sudo certbot --nginx --register-unsafely-without-email
+sudo certbot --nginx --redirect
 ```
 
 
