@@ -119,12 +119,12 @@ curl -L https://snapshots.kjnodes.com/nolus-testnet/snapshot_latest.tar.lz4 | ta
 [[ -f $HOME/.nolus/data/upgrade-info.json ]] && cp $HOME/.nolus/data/upgrade-info.json $HOME/.nolus/cosmovisor/genesis/upgrade-info.json
 ```
 
-# Start service and check the logs
+### Start service and check the logs
 ```
 sudo systemctl start nolusd && sudo journalctl -u nolusd -f --no-hostname -o cat
 ```
 
-# Start sync log setelah 10 menit
+### Chek sync log setelah 10 menit
 ```
 nolusd status 2>&1 | jq .SyncInfo
 ```
