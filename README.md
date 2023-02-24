@@ -130,21 +130,26 @@ nolusd status 2>&1 | jq .SyncInfo
 ```
 
 __________________________________
+# Add Wallet
+
+### Jika Membuat Wallet baru
+```
+nolusd keys add wallet
 ```
 
+### Jika Import Wallet yang sudah ada
+```
+nolusd keys add wallet --recover
 ```
 
-
+### Untuk melihat daftar wallet saat ini
+```
+nolusd keys list
 ```
 
-```
-
-
-```
-
-```
-
-
+__________________________________
+# Validator management
+### Create Validator
 ```
 
 ```
