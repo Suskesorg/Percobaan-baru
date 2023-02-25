@@ -3,6 +3,15 @@ Untuk Auto installasi silahkan lihat di : https://github.com/SaujanaOK/nolus-cor
 # Manual Installasi
 ### Set Env Variable
 ```
+API_Domain=masukan API Domainmu
+```
+
+```
+RPC_Domain=masukan RPC Domainmu
+```
+
+```
+gRPC_Domain=masukan gRPC Domainmu
 ```
 
 ### Package
