@@ -65,7 +65,7 @@ nolusd tx staking create-validator \
 ```
 
 ### Submit Crew3
-- Check transaksi ID di https://nolus.explorers.guru/
+- Check transaksi ID di https://nolus.explorers.guru/ atau https://explorer-rila.nolus.io/
 - Kemudian copy linknya dan submit di Crew3 : 
 https://crew3.xyz/c/nolus/invite/szl85ZQ5Opq8F_Uj3_siu
 
