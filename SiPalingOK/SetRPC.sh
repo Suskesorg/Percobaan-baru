@@ -19,17 +19,6 @@ echo -e '\e[36mDiscord      :\e[39m' DEFFAN#0372
 echo -e '\e[36mGithub       :\e[39m' https://github.com/SaujanaOK/
 echo "==========================================================================================" 
 
-sleep 1
-# Variable
-remote_addr=$remote_addr
-proxy_add_x_forwarded_for=$proxy_add_x_forwarded_for
-host=$host
-
-echo "export remote_addr=${remote_addr}" >> $HOME/.bash_profile
-echo "export proxy_add_x_forwarded_for=${proxy_add_x_forwarded_for}" >> $HOME/.bash_profile
-echo "export host=${host}" >> $HOME/.bash_profile
-source $HOME/.bash_profile
-
 # Set Vars api
 if [ ! $API_Domain ]; then
         read -p "ENTER YOUR API_Domain : " API_Domain
@@ -97,9 +86,9 @@ server {
         add_header Access-Control-Max-Age 3600;
         add_header Access-Control-Expose-Headers Content-Length;
 
-	proxy_set_header   X-Real-IP        $remote_addr;
-        proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
-        proxy_set_header   Host             $host;
+	proxy_set_header   X-Real-IP        \$remote_addr;
+        proxy_set_header   X-Forwarded-For  \$proxy_add_x_forwarded_for;
+        proxy_set_header   Host             \$host;
 
         proxy_pass http://0.0.0.0:43317;
 
@@ -117,9 +106,9 @@ server {
         add_header Access-Control-Max-Age 3600;
         add_header Access-Control-Expose-Headers Content-Length;
 
-	proxy_set_header   X-Real-IP        $remote_addr;
-        proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
-        proxy_set_header   Host             $host;
+	proxy_set_header   X-Real-IP        \$remote_addr;
+        proxy_set_header   X-Forwarded-For  \$proxy_add_x_forwarded_for;
+        proxy_set_header   Host             \$host;
 
         proxy_pass http://127.0.0.1:43657;
 
@@ -137,9 +126,9 @@ server {
         add_header Access-Control-Max-Age 3600;
         add_header Access-Control-Expose-Headers Content-Length;
 
-	proxy_set_header   X-Real-IP        $remote_addr;
-        proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
-        proxy_set_header   Host             $host;
+	proxy_set_header   X-Real-IP        \$remote_addr;
+        proxy_set_header   X-Forwarded-For  \$proxy_add_x_forwarded_for;
+        proxy_set_header   Host             \$host;
 
         proxy_pass http://0.0.0.0:43091;
 
