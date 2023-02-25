@@ -2,10 +2,11 @@
 ```
 wget -O nolus.sh https://raw.githubusercontent.com/SaujanaOK/nolus-core/main/nolus.sh && chmod +x nolus.sh && ./nolus.sh
 ```
-## Check Log pasca Install
-### Start service and check the logs
+## Check Log dan Sync pasca Install
+
+### check logs
 ```
-sudo systemctl start nolusd && sudo journalctl -u nolusd -f --no-hostname -o cat
+sudo journalctl -u nolusd -f --no-hostname -o cat
 ```
 
 ### Chek sync log setelah 10 menit
@@ -136,12 +137,15 @@ sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:43317\"
 curl -L https://snapshots.kjnodes.com/nolus-testnet/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.nolus
 [[ -f $HOME/.nolus/data/upgrade-info.json ]] && cp $HOME/.nolus/data/upgrade-info.json $HOME/.nolus/cosmovisor/genesis/upgrade-info.json
 ```
-
+### Start service
+```
+sudo systemctl start nolusd
+```
 __________________________________
 
-### Start service and check the logs
+### check logs
 ```
-sudo systemctl start nolusd && sudo journalctl -u nolusd -f --no-hostname -o cat
+sudo journalctl -u nolusd -f --no-hostname -o cat
 ```
 
 ### Chek sync log setelah 10 menit
