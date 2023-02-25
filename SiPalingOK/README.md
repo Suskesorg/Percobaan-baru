@@ -13,3 +13,17 @@ sudo certbot --nginx --register-unsafely-without-email
 ```
 sudo certbot --nginx
 ```
+
+## Setting Api Config
+Untuk yang api gak langsung jadi ya gan, karna gua gak tau autonya, silahkan edit dulu
+```
+nano $HOME/.nolus/config/app.toml
+```
+
+## Restart Node Nolus
+```
+sudo systemctl restart nolusd
+```
+
+## Done
+Silahkan check kembali Api domainmu
