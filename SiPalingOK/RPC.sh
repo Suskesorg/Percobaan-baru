@@ -20,6 +20,15 @@ echo -e '\e[36mGithub       :\e[39m' https://github.com/SaujanaOK/
 echo "==========================================================================================" 
 
 sleep 1
+# Variable
+remote_addr=$remote_addr
+proxy_add_x_forwarded_for=$proxy_add_x_forwarded_for
+host=$host
+
+echo "export remote_addr=${remote_addr}" >> $HOME/.bash_profile
+echo "export proxy_add_x_forwarded_for=${proxy_add_x_forwarded_for}" >> $HOME/.bash_profile
+echo "export host=${host}" >> $HOME/.bash_profile
+source $HOME/.bash_profile
 
 # Set Vars api
 if [ ! $API_Domain ]; then
