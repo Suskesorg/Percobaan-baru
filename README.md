@@ -245,6 +245,7 @@ sudo systemctl daemon-reload
 rm -f $(which nolusd)
 rm -rf $HOME/.nolus
 rm -rf $HOME/nolus-core
+rm -rf $HOME/nolus.sh
 
 ```
 
