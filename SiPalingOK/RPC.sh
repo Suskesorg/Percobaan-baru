@@ -54,6 +54,9 @@ echo ""
 sudo apt update && sudo apt upgrade -y
 sudo apt install nginx certbot python3-certbot-nginx -y
 
+# Allow Port
+sudo ufw allow 443 && sudo ufw allow 80 && sudo ufw allow 43317 && sudo ufw allow 43090 && sudo ufw allow 43090 && sudo ufw enable -y
+
 # Install PIP
 sudo apt install python3 python3-venv libaugeas0
 
