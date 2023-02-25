@@ -1,4 +1,4 @@
-Untuk Auto installasi silahkan lihat di : https://github.com/SaujanaOK/nolus-core/tree/main/SiPalingOK
+Untuk Auto installasi silahkan lihat [di sini](https://github.com/SaujanaOK/nolus-core/tree/main/SiPalingOK)
 
 # Manual Installasi
 ### Set Env Variable
