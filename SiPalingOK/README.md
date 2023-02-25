@@ -19,6 +19,8 @@ Untuk yang api gak langsung jadi ya gan, karna gua gak tau autonya, silahkan edi
 ```
 nano $HOME/.nolus/config/app.toml
 ```
+Pastikan settingan seperti pada gambar, lalu save CTRL + X dan Y
+<p align="center"><img src="https://github.com/SaujanaOK/Images/blob/main/apinolus.png" alt=""></p>
 
 ## Restart Node Nolus
 ```
