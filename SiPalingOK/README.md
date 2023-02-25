@@ -1,9 +1,9 @@
 ## Set domain sebagai env variable
 Sebelum menggunakan Auto Setting RPC/gRPC dan Api nolus ini, silahkan set env variable terlebih dari di bawah ini :
 
-```console
-RPC_Domain=<RPC Domainmu>``` contoh ```consolerpc.nolus.bejo.com```
-
+```
+RPC_Domain=<RPC Domainmu> contoh consolerpc.nolus.bejo.com
+```
 
 ```
 gRPC_Domain=<gRPC Domainmu> contoh grpc.nolus.bejo.com
