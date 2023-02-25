@@ -98,5 +98,10 @@ rm -rf $HOME/nolus.sh
 rm -rf $HOME/go
 ```
 
+__________________________________
 
+
+### Source
+
+https://services.kjnodes.com/home/testnet/nolus/installation
 
