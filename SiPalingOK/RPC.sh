@@ -21,25 +21,32 @@ echo "==========================================================================
 
 sleep 1
 
-# Set Vars
+# Set Vars api
 if [ ! $API_Domain ]; then
         read -p "ENTER YOUR API_Domain : " API_Domain
         echo 'export API_Domain='$API_Domain >> $HOME/.bash_profile
-        
-# Set Vars
+fi
+echo ""
+echo -e "YOUR API_Domain  : \e[1m\e[35m$API_Domain\e[0m"
+echo ""
+
+# Set Vars RPC
 if [ ! $RPC_Domain ]; then
         read -p "ENTER YOUR RPC_Domain : " RPC_Domain
         echo 'export RPC_Domain='$RPC_Domain >> $HOME/.bash_profile
-        
-# Set Vars
+
+fi
+echo ""
+echo -e "YOUR RPC_Domain  : \e[1m\e[35m$RPC_Domain\e[0m"
+echo ""
+
+# Set Vars gRPC
 if [ ! $gRPC_Domain ]; then
         read -p "ENTER YOUR gRPC_Domain : " gRPC_Domain
         echo 'export gRPC_Domain='$gRPC_Domain >> $HOME/.bash_profile
 
 fi
 echo ""
-echo -e "YOUR API_Domain  : \e[1m\e[35m$API_Domain\e[0m"
-echo -e "YOUR RPC_Domain  : \e[1m\e[35m$RPC_Domain\e[0m"
 echo -e "YOUR gRPC_Domain : \e[1m\e[35m$gRPC_Domain \e[0m"
 echo ""
 
@@ -63,7 +70,7 @@ sudo /opt/certbot/bin/pip install certbot certbot-nginx
 # Create a symlink
 sudo ln -s /opt/certbot/bin/certbot /usr/bin/certbot
 
-# Remove file lama
+# Remove file
 rm -rf /etc/nginx/sites-enabled/${API_Domain}.conf
 rm -rf /etc/nginx/sites-enabled/${RPC_Domain}.conf
 rm -rf /etc/nginx/sites-enabled/${gRPC_Domain}.conf
