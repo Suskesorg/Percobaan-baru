@@ -141,6 +141,7 @@ sudo systemctl restart nolusd
 sudo systemctl restart nginx
 
 echo '=============== Settingan Kelar Gan ==================='
-echo -e "Silahkan Lanjutkan memasang SSL: \e[1m\e[35msudo certbot --nginx --register-unsafely-without-email\e[0m"
+echo -e "Silahkan Lanjutkan memasang SSL : \e[1m\e[35msudo certbot --nginx --register-unsafely-without-email\e[0m"
+echo -e "Kamu juga bisa menghapus autonya gan : \e[1m\e[35mrm -rf $HOME/gRPCApi.sh\e[0m"
 
 # End
