@@ -5,19 +5,18 @@ Pastikan anda memiliki domain dengan settingan seperti gambar ini kira-kira
 Setelah setting DNS pada domain kelar, mari lanjutkan di VPS
 
 ```
-sudo apt update && sudo apt upgrade -y
-```
-
-```
 sudo apt install nginx certbot python3-certbot-nginx -y
+sudo apt update && sudo apt upgrade -y
+sudo apt install python3 python3-venv libaugeas0
+sudo python3 -m venv /opt/certbot/
+sudo /opt/certbot/bin/pip install --upgrade pip
+sudo /opt/certbot/bin/pip install certbot certbot-nginx
+sudo ln -s /opt/certbot/bin/certbot /usr/bin/certbot
+
 ```
 
 ```
 curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
-```
-
-```
-sudo apt-get update && apt install -y nodejs git
 ```
 
 ```
@@ -26,6 +25,9 @@ echo "deb [signed-by=/usr/share/keyrings/yarnkey.gpg] https://dl.yarnpkg.com/deb
 sudo apt-get update && sudo apt-get install yarn -y
 ```
 
+```
+sudo apt-get update && apt install -y nodejs git
+```
 
 ```
 nano $HOME/.nolus/config/app.toml
