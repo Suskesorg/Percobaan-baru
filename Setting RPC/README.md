@@ -14,6 +14,9 @@ sudo apt install nginx certbot python3-certbot-nginx -y
 
 ```
 curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+```
+
+```
 sudo apt-get update && apt install -y nodejs git
 ```
 
