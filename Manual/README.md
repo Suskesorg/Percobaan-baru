@@ -125,6 +125,7 @@ curl -L https://snapshots.kjnodes.com/nolus-testnet/snapshot_latest.tar.lz4 | ta
 sudo systemctl start nolusd
 sudo systemctl daemon-reload
 sudo systemctl enable nolusd
+sudo systemctl restart nolusd
 ```
 __________________________________
 
