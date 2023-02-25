@@ -95,7 +95,7 @@ rm -f $(which nolusd)
 rm -rf $HOME/.nolus
 rm -rf $HOME/nolus-core
 rm -rf $HOME/nolus.sh
-
+rm -rf $HOME/go
 ```
 
 
