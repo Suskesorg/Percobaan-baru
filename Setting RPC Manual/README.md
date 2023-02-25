@@ -13,7 +13,9 @@ RPC_Domain=masukan RPC Domainmu
 ```
 gRPC_Domain=masukan gRPC Domainmu
 ```
-
+```
+source $HOME/.bash_profile
+```
 ### Package
 
 ```
