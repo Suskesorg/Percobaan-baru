@@ -1,5 +1,5 @@
 ## Auto Set UP API, RPC dan gRPC Nolus
 
 ```
-wget -O autosett.sh https://raw.githubusercontent.com/SaujanaOK/nolus-core/main/SiPalingOK/autosett.sh && chmod +x autosett.sh && ./autosett.sh
+wget -O RPC.sh https://raw.githubusercontent.com/SaujanaOK/nolus-core/main/SiPalingOK/RPC.sh && chmod +x RPC.sh && ./RPC.sh
 ```
