@@ -1,3 +1,5 @@
+Untuk versi manual, silahkan check di sini : https://github.com/SaujanaOK/nolus-core/tree/main/Setting%20RPC%20Manual
+
 ## Auto Set UP API, RPC dan gRPC Nolus
 
 ```
