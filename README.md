@@ -1,4 +1,22 @@
-# Setup validator name
+# Auto Install
+```
+wget -O nolus.sh https://raw.githubusercontent.com/SaujanaOK/nolus-core/main/nolus.sh && chmod +x nolus.sh && ./nolus.sh
+```
+## Check Log pasca Install
+### Start service and check the logs
+```
+sudo systemctl start nolusd && sudo journalctl -u nolusd -f --no-hostname -o cat
+```
+
+### Chek sync log setelah 10 menit
+```
+nolusd status 2>&1 | jq .SyncInfo
+```
+
+##### Kalau Pake Auto Install, setelah kelar, langsung lompat ke bagian add wallet gan
+__________________________________
+
+# Manual Install
 ## Set env
 ```
 MONIKER="YOUR_MONIKER_GOES_HERE"
@@ -118,6 +136,8 @@ sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:43317\"
 curl -L https://snapshots.kjnodes.com/nolus-testnet/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.nolus
 [[ -f $HOME/.nolus/data/upgrade-info.json ]] && cp $HOME/.nolus/data/upgrade-info.json $HOME/.nolus/cosmovisor/genesis/upgrade-info.json
 ```
+
+__________________________________
 
 ### Start service and check the logs
 ```
