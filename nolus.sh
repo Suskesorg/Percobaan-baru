@@ -51,7 +51,7 @@ source $HOME/.bash_profile
 
 # Set Vars
 if [ ! $NODENAME ]; then
-        read -p "hello@nodexcapital:~# [ENTER YOUR NODENAME] > " NODENAME
+        read -p "ENTER YOUR NODENAME : " NODENAME
         echo 'export NODENAME='$NODENAME >> $HOME/.bash_profile
 fi
 echo ""
