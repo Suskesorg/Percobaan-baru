@@ -13,6 +13,10 @@ sudo journalctl -u nolusd -f --no-hostname -o cat
 ```
 nolusd status 2>&1 | jq .SyncInfo
 ```
+### check version
+```
+nolusd version
+```
 
 ##### Kalau Pake Auto Install, setelah kelar, langsung lompat ke bagian add wallet gan
 __________________________________
