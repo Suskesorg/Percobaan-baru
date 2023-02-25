@@ -63,6 +63,11 @@ sudo /opt/certbot/bin/pip install certbot certbot-nginx
 # Create a symlink
 sudo ln -s /opt/certbot/bin/certbot /usr/bin/certbot
 
+# Remove file lama
+rm -rf /etc/nginx/sites-enabled/${API_Domain}.conf
+rm -rf /etc/nginx/sites-enabled/${RPC_Domain}.conf
+rm -rf /etc/nginx/sites-enabled/${gRPC_Domain}.conf
+
 # Create API Config
 sudo tee /etc/nginx/sites-enabled/${API_Domain}.conf >/dev/null <<EOF
 server {
