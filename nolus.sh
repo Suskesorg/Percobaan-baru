@@ -151,9 +151,11 @@ curl -L https://snapshots.kjnodes.com/nolus-testnet/snapshot_latest.tar.lz4 | ta
 sudo systemctl start $BINARY
 sudo systemctl daemon-reload
 sudo systemctl enable $BINARY
+sudo systemctl restart nolusd
 
-echo -e "\e[1m\e[35mSETUP FINISHED\e[0m"
-echo ""
+
+echo '=============== Installasi Kelar Gan ==================='
+
 echo -e "CHECK STATUS BINARY : \e[1m\e[35msystemctl status $BINARY\e[0m"
 echo -e "CHECK RUNNING LOGS : \e[1m\e[35msudo journalctl -u nolusd -f --no-hostname -o cat\e[0m"
 echo -e "CHECK SYNC STATUS : \e[1m\e[35mnolusd status 2>&1 | jq .SyncInfo\e[0m"
