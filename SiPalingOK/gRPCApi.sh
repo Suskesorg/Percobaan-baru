@@ -51,7 +51,7 @@ echo ""
 
 # Set Vars IP API
 if [ ! $IP_API_Domain ]; then
-        read -p "ENTER YOUR IP_API_Domain : " IP_API_Domain
+        read -p "ENTER YOUR IP_API_Domain With Port : " IP_API_Domain
         echo 'export IP_API_Domain='$IP_API_Domain >> $HOME/.bash_profile
 
 fi
@@ -61,7 +61,7 @@ echo ""
 
 # Set Vars IP RPC
 if [ ! $IP_RPC_Domain ]; then
-        read -p "ENTER YOUR IP_RPC_Domain : " IP_RPC_Domain
+        read -p "ENTER YOUR IP_RPC_Domain With Port : " IP_RPC_Domain
         echo 'export IP_RPC_Domain='$IP_RPC_Domain >> $HOME/.bash_profile
 
 fi
@@ -71,7 +71,7 @@ echo ""
 
 # Set Vars IP gRPC
 if [ ! $IP_gRPC_Domain ]; then
-        read -p "ENTER YOUR IP_gRPC_Domain : " IP_gRPC_Domain
+        read -p "ENTER YOUR IP_gRPC_Domain With Port : " IP_gRPC_Domain
         echo 'export IP_gRPC_Domain='$IP_gRPC_Domain >> $HOME/.bash_profile
 
 fi
