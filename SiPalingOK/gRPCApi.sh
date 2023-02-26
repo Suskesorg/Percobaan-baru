@@ -29,16 +29,6 @@ echo -e "YOUR API_Domain  : \e[1m\e[35m$API_Domain\e[0m"
 echo ""
 
 
-# Set Vars IP api
-if [ ! $API_Domain ]; then
-        read -p "ENTER YOUR IP_API_Domain : " IP_API_Domain
-        echo 'export IP_API_Domain='$IP_API_Domain >> $HOME/.bash_profile
-fi
-echo ""
-echo -e "YOUR IP_API_Domain  : \e[1m\e[35m$IP_API_Domain\e[0m"
-echo ""
-
-
 # Set Vars RPC
 if [ ! $RPC_Domain ]; then
         read -p "ENTER YOUR RPC_Domain : " RPC_Domain
@@ -47,16 +37,6 @@ if [ ! $RPC_Domain ]; then
 fi
 echo ""
 echo -e "YOUR RPC_Domain  : \e[1m\e[35m$RPC_Domain\e[0m"
-echo ""
-
-# Set Vars IP RPC
-if [ ! $RPC_Domain ]; then
-        read -p "ENTER YOUR IP_RPC_Domain : " IP_RPC_Domain
-        echo 'export IP_RPC_Domain='$RPC_Domain >> $HOME/.bash_profile
-
-fi
-echo ""
-echo -e "YOUR IP_RPC_Domain  : \e[1m\e[35m$IP_RPC_Domain\e[0m"
 echo ""
 
 # Set Vars gRPC
@@ -69,14 +49,34 @@ echo ""
 echo -e "YOUR gRPC_Domain : \e[1m\e[35m$gRPC_Domain \e[0m"
 echo ""
 
-# Set Vars IP gRPC
-if [ ! $gRPC_Domain ]; then
-        read -p "ENTER YOUR IP_gRPC_Domain : " IP_gRPC_Domain
-        echo 'export IP_gRPC_Domain='$gRPC_Domain >> $HOME/.bash_profile
+# Set Vars IP API
+if [ ! $IP_API_Domain ]; then
+        read -p "ENTER YOUR IP_API_Domain : " IP_API_Domain
+        echo 'export IP_API_Domain='$IP_API_Domain >> $HOME/.bash_profile
 
 fi
 echo ""
-echo -e "YOUR IP_gRPC_Domain  : \e[1m\e[35m$IP_gRPC_Domain\e[0m"
+echo -e "YOUR IP_API_Domain : \e[1m\e[35m$IP_API_Domain \e[0m"
+echo ""
+
+# Set Vars IP RPC
+if [ ! $IP_RPC_Domain ]; then
+        read -p "ENTER YOUR IP_RPC_Domain : " IP_RPC_Domain
+        echo 'export IP_RPC_Domain='$IP_RPC_Domain >> $HOME/.bash_profile
+
+fi
+echo ""
+echo -e "YOUR IP_RPC_Domain : \e[1m\e[35m$IP_RPC_Domain \e[0m"
+echo ""
+
+# Set Vars IP gRPC
+if [ ! $IP_gRPC_Domain ]; then
+        read -p "ENTER YOUR IP_gRPC_Domain : " IP_gRPC_Domain
+        echo 'export IP_gRPC_Domain='$IP_gRPC_Domain >> $HOME/.bash_profile
+
+fi
+echo ""
+echo -e "YOUR IP_gRPC_Domain : \e[1m\e[35m$IP_gRPC_Domain \e[0m"
 echo ""
 
 # Package
