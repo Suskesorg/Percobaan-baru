@@ -49,34 +49,34 @@ echo ""
 echo -e "YOUR gRPC_Domain : \e[1m\e[35m$gRPC_Domain \e[0m"
 echo ""
 
-# Set Vars IP API
-if [ ! $IP_API_Domain ]; then
-        read -p "ENTER YOUR IP_API_Domain and Port dengan tanpa http:// bosQ : " IP_API_Domain
-        echo 'export IP_API_Domain='$IP_API_Domain >> $HOME/.bash_profile
+# Set Vars PORT API
+if [ ! $ApiPort ]; then
+        read -p "Masukkan Port Api kamu Boss Q : " ApiPort
+        echo 'export ApiPort='$ApiPort >> $HOME/.bash_profile
 
 fi
 echo ""
-echo -e "YOUR IP_API_Domain : \e[1m\e[35m$IP_API_Domain \e[0m"
+echo -e "Port Api Kamu benar kan? : \e[1m\e[35m$ApiPort \e[0m"
 echo ""
 
-# Set Vars IP RPC
-if [ ! $IP_RPC_Domain ]; then
-        read -p "ENTER YOUR IP_RPC_Domain and Port dengan tanpa http:// bosQ  : " IP_RPC_Domain
-        echo 'export IP_RPC_Domain='$IP_RPC_Domain >> $HOME/.bash_profile
-
-fi
-echo ""
-echo -e "YOUR IP_RPC_Domain : \e[1m\e[35m$IP_RPC_Domain \e[0m"
-echo ""
-
-# Set Vars IP gRPC
-if [ ! $IP_gRPC_Domain ]; then
-        read -p "ENTER YOUR IP_gRPC_Domain and Port dengan tanpa http:// bosQ  : " IP_gRPC_Domain
-        echo 'export IP_gRPC_Domain='$IP_gRPC_Domain >> $HOME/.bash_profile
+# Set Vars PORT RPC
+if [ ! $RPCPort ]; then
+        read -p "Masukkan Port RPC kamu Boss Q  : " RPCPort
+        echo 'export RPCPort='$RPCPort >> $HOME/.bash_profile
 
 fi
 echo ""
-echo -e "YOUR IP_gRPC_Domain : \e[1m\e[35m$IP_gRPC_Domain \e[0m"
+echo -e "Port RPC Kamu benar kan? : \e[1m\e[35m$RPCPort \e[0m"
+echo ""
+
+# Set Vars PORT gRPC
+if [ ! $gRPCPORT ]; then
+        read -p "Masukkan Port gRPC kamu Boss Q  : " gRPCPORT
+        echo 'export gRPCPORT='$gRPCPORT >> $HOME/.bash_profile
+
+fi
+echo ""
+echo -e "Port gRPC Kamu benar kan? : \e[1m\e[35m$gRPCPORT \e[0m"
 echo ""
 
 # Package
@@ -84,7 +84,7 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install nginx certbot python3-certbot-nginx -y
 
 # Allow Port
-sudo ufw allow 443 && sudo ufw allow 80 && sudo ufw allow 43317 && sudo ufw allow 43090 && sudo ufw allow 43090
+sudo ufw allow 443 && sudo ufw allow 80 && sudo ufw allow $ApiPort && sudo ufw allow $RPCPORT && sudo ufw allow $gRPCPORT
 
 # Install PIP
 sudo apt install python3 python3-venv libaugeas0
@@ -121,7 +121,7 @@ server {
         proxy_set_header   X-Forwarded-For  \$proxy_add_x_forwarded_for;
         proxy_set_header   Host             \$host;
 
-        proxy_pass http://$IP_API_Domain;
+        proxy_pass http://0.0.0.0:$ApiPort;
 
     }
 }
@@ -141,7 +141,7 @@ server {
         proxy_set_header   X-Forwarded-For  \$proxy_add_x_forwarded_for;
         proxy_set_header   Host             \$host;
 
-        proxy_pass http://$IP_RPC_Domain;
+        proxy_pass http://127.0.0.1:$RPCPort;
 
     }
 }
@@ -161,7 +161,7 @@ server {
         proxy_set_header   X-Forwarded-For  \$proxy_add_x_forwarded_for;
         proxy_set_header   Host             \$host;
 
-        proxy_pass http://$IP_gRPC_Domain;
+        proxy_pass http://0.0.0.0:$gRPCPORT;
 
     }
 }
