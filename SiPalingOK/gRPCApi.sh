@@ -84,7 +84,7 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install nginx certbot python3-certbot-nginx -y
 
 # Allow Port
-sudo ufw allow 443 && sudo ufw allow 80 && sudo ufw allow $ApiPort && sudo ufw allow $RPCPORT && sudo ufw allow $gRPCPORT
+sudo ufw allow 443 && sudo ufw allow 80 && sudo ufw allow ${ApiPort} && sudo ufw allow ${RPCPORT} && sudo ufw allow ${gRPCPORT}
 
 # Install PIP
 sudo apt install python3 python3-venv libaugeas0
