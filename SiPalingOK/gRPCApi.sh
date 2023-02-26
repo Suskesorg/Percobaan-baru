@@ -80,8 +80,8 @@ echo -e "Port gRPC Kamu benar kan? : \e[1m\e[35m$gRPCPORT \e[0m"
 echo ""
 
 # Package
-sudo apt update && sudo apt upgrade -y
-sudo apt install nginx certbot python3-certbot-nginx -y
+sudo apt update && sudo apt upgrade
+sudo apt install nginx certbot python3-certbot-nginx
 
 # Allow Port
 sudo ufw allow 443 && sudo ufw allow 80 && sudo ufw allow $ApiPort && sudo ufw allow $RPCPORT && sudo ufw allow $gRPCPORT
