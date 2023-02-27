@@ -1,4 +1,18 @@
 #!/bin/bash
+
+sleep 2
+# Unset Vars
+unset API_Domain
+unset RPC_Domain
+unset gRPC_Domain
+unset ApiPort
+unset RPCPort
+unset gRPCPORT
+apt-get clean
+sudo apt-get autoclean
+sudo apt-get autoremove
+sudo apt-get install localpurge
+
 clear
 echo -e "\e[96m"       
 echo -e "  **********                    **                             "
@@ -11,13 +25,14 @@ echo -e " ******** //********//******//*** //******** ***  /**//********"
 echo -e "////////   ////////  //////  ///   //////// ///   //  //////// "
 echo -e "\e[0m"
 
-echo -e '\e[36mGarapan      :\e[39m' Setting RPC/gRPC dan API Nolus
+echo "===================================================================" 
+echo -e '\e[36mGarapan      :\e[39m' Setting RPC/gRPC dan API Nolus Chain
 echo -e '\e[36mAuthor       :\e[39m' Saujana
 echo -e '\e[36mTelegram     :\e[39m' @SaujanaOK
 echo -e '\e[36mTwitter      :\e[39m' @SaujanaCrypto
 echo -e '\e[36mDiscord      :\e[39m' DEFFAN#0372
 echo -e '\e[36mGithub       :\e[39m' https://github.com/SaujanaOK/
-echo "==========================================================================================" 
+echo "===================================================================" 
 
 # Set Vars api
 if [ ! $API_Domain ]; then
