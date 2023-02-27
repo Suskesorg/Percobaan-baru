@@ -24,7 +24,7 @@ sleep 2
 # Variable
 SOURCE=nolus-core
 WALLET=wallet
-BINARY=nolusd
+BINARY=nibid
 CHAIN=nolus-rila
 FOLDER=.nolus
 VERSION=v0.1.39
@@ -85,19 +85,19 @@ make build
 # Prepare binaries for Cosmovisor
 cd $HOME/nolus-core
 mkdir -p $HOME/.nolus/cosmovisor/genesis/bin
-mv target/release/nolusd $HOME/.nolus/cosmovisor/genesis/bin/
+mv target/release/nibid $HOME/.nolus/cosmovisor/genesis/bin/
 rm -rf build
 
 # Create application symlinks
 cd $HOME/nolus-core
 ln -s $HOME/.nolus/cosmovisor/genesis $HOME/.nolus/cosmovisor/current
-sudo ln -s $HOME/.nolus/cosmovisor/current/bin/nolusd /usr/local/bin/nolusd
+sudo ln -s $HOME/.nolus/cosmovisor/current/bin/nibid /usr/local/bin/nibid
 
 # Download and install Cosmovisor
 go install cosmossdk.io/tools/cosmovisor/cmd/cosmovisor@v1.4.0
 
 # Create service
-sudo tee /etc/systemd/system/nolusd.service > /dev/null << EOF
+sudo tee /etc/systemd/system/nibid.service > /dev/null << EOF
 [Unit]
 Description=nolus-testnet node service
 After=network-online.target
@@ -109,7 +109,7 @@ Restart=on-failure
 RestartSec=10
 LimitNOFILE=65535
 Environment="DAEMON_HOME=$HOME/.nolus"
-Environment="DAEMON_NAME=nolusd"
+Environment="DAEMON_NAME=nibid"
 Environment="UNSAFE_SKIP_BACKUP=true"
 Environment="PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:$HOME/.nolus/cosmovisor/current/bin"
 
@@ -117,12 +117,12 @@ Environment="PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/
 WantedBy=multi-user.target
 EOF
 sudo systemctl daemon-reload
-sudo systemctl enable nolusd
+sudo systemctl enable nibid
 
 # Set node configuration
-nolusd config chain-id nolus-rila
-nolusd config keyring-backend test
-nolusd config node tcp://localhost:43657
+nibid config chain-id nolus-rila
+nibid config keyring-backend test
+nibid config node tcp://localhost:43657
 
 # Download genesis and addrbook
 curl -Ls https://snapshots.kjnodes.com/nolus-testnet/genesis.json > $HOME/.nolus/config/genesis.json
@@ -151,13 +151,13 @@ curl -L https://snapshots.kjnodes.com/nolus-testnet/snapshot_latest.tar.lz4 | ta
 sudo systemctl start $BINARY
 sudo systemctl daemon-reload
 sudo systemctl enable $BINARY
-sudo systemctl restart nolusd
+sudo systemctl restart nibid
 
 
 echo '=============== Installasi Kelar Gan ==================='
 
 echo -e "CHECK STATUS BINARY : \e[1m\e[35msystemctl status $BINARY\e[0m"
-echo -e "CHECK RUNNING LOGS : \e[1m\e[35msudo journalctl -u nolusd -f --no-hostname -o cat\e[0m"
-echo -e "CHECK SYNC STATUS : \e[1m\e[35mnolusd status 2>&1 | jq .SyncInfo\e[0m"
+echo -e "CHECK RUNNING LOGS : \e[1m\e[35msudo journalctl -u nibid -f --no-hostname -o cat\e[0m"
+echo -e "CHECK SYNC STATUS : \e[1m\e[35mnibid status 2>&1 | jq .SyncInfo\e[0m"
 
 # End
