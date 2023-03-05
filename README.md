@@ -40,7 +40,26 @@ nolusd keys add wallet --recover
 ```
 nolusd keys list
 ```
+### Simpan Info Wallet
+```
+NOLUS_WALLET_ADDRESS=$(nolusd keys show $WALLET -a)
+NOLUS_VALOPER_ADDRESS=$(nolusd keys show $WALLET --bech val -a)
+echo 'export NOLUS_WALLET_ADDRESS='${NOLUS_WALLET_ADDRESS} >> $HOME/.bash_profile
+echo 'export NOLUS_VALOPER_ADDRESS='${NOLUS_VALOPER_ADDRESS} >> $HOME/.bash_profile
+source $HOME/.bash_profile
+```
+### Check Saldo Wallet
+```
+nolusd query bank balances $NOLUS_WALLET_ADDRESS
+```
 
+### Restart Node
+```
+sudo systemctl daemon-reload
+sudo systemctl enable nolusd
+sudo systemctl restart nolusd
+source $HOME/.bash_profile
+```
 __________________________________
 # Validator management
 ### Create Validator
