@@ -72,7 +72,6 @@ EOF
 ### Install SSL
 ```
 sudo certbot --nginx --register-unsafely-without-email
-sudo certbot --nginx --redirect
 ```
 And select your snapshot domain
         
