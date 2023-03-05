@@ -96,7 +96,7 @@ rm -rf $HOME/.nolus/data
 ```
 ### Download snapshot
 ```
-curl -L https://snapshot.nolus.belajar.codes/nolus/nolus-snapshot-20230305.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.nolus
+curl -L https://snapshot.nolus.belajar.codes/nolus/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.nolus
 mv $HOME/.nolus/priv_validator_state.json.backup $HOME/.nolus/data/priv_validator_state.json
 ```
 
