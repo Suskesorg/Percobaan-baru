@@ -50,6 +50,7 @@ tar -cf - data | lz4 > /var/www/snapshot/planq/planq-snapshot-$(date +%Y%m%d).ta
 ```
 
 ### Make Snapshot Config
+**Warning** : Please change <Your Domain> to your Snapshot Domain like snapshot.nolus.example.com
 ```
 sudo tee /etc/nginx/sites-enabled/<Your Domain>.conf >/dev/null <<EOF
 server {
@@ -68,7 +69,6 @@ server {
 }
 EOF
 ```
-Please change <Your Domain> to your Snapshot Domain like snapshot.nolus.example.com
 
 ### Install SSL
 ```
