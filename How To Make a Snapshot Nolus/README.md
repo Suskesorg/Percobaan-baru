@@ -1,4 +1,5 @@
 ## Configurasi your Domain
+Custom CNAME your domain to IP VPS, Like `snapshot.nolus.example.com`
 
 ## Prepare
 ```
@@ -39,8 +40,32 @@ cd $HOME/.nolus
 sudo systemctl stop nolusd
 ```
 
+## Make Snapshot File
+```
+cd $HOME/.nolus
+tar -cf - data | lz4 > /var/www/snapshot/planq/planq-snapshot-$(date +%Y%m%d).tar.lz4
+```
+
+## Make Snapshot Config
+```
+sudo tee /etc/nginx/sites-enabled/<Your Domain>.conf >/dev/null <<EOF
+server {
+        root /var/www/html;
+        index index.html index.htm index.nginx-debian.html;
+        server_name <Your Domain>; 
 
 
+        location / {
+                # First attempt to serve request as file, then
+                # as directory, then fall back to displaying a 404.
+                # try_files $uri $uri/ =404;
+                root /var/www/snapshot/;
+                autoindex on;
+    }
+}
+EOF
+```
+Please change <Your Domain> to your Snapshot Domain like snapshot.nolus.example.com
 
 
 
