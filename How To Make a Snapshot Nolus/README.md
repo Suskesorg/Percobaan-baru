@@ -67,5 +67,15 @@ EOF
 ```
 Please change <Your Domain> to your Snapshot Domain like snapshot.nolus.example.com
 
-
-
+## Install SSL
+```
+sudo certbot --nginx --register-unsafely-without-email
+sudo certbot --nginx --redirect
+```
+And select your snapshot domain
+        
+## Restart Ngin and Node
+```
+sudo systemctl start nginx
+sudo systemctl start nolusd
+```
