@@ -81,5 +81,5 @@ sudo systemctl start nolusd
 ```
 ______________________
 # This Our Snapshot
-https://snapshot.nolus.belajar.codes/nolus-snapshot-20230305.tar.lz4
+https://snapshot.nolus.belajar.codes/nolus/
 
