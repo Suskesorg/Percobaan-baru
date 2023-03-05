@@ -82,7 +82,7 @@ sudo systemctl start nolusd
 ```
 ______________________________
 # This Our Snapshot
-https://snapshot.nolus.sarjananode.codes/nolus/
+https://snapshot.nolus.sarjananode.studio/nolus/
 ______________________________
         
 ## How to Use our Snapshot
@@ -94,7 +94,7 @@ rm -rf $HOME/.nolus/data
 ```
 ### Download our snapshot
 ```
-curl -L https://snapshot.nolus.sarjananode.codes/nolus/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.nolus
+curl -L https://snapshot.nolus.sarjananode.studio/nolus/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.nolus
 mv $HOME/.nolus/priv_validator_state.json.backup $HOME/.nolus/data/priv_validator_state.json
 ```
 
