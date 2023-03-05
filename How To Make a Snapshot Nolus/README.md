@@ -79,7 +79,10 @@ And select your snapshot domain
 sudo systemctl start nginx
 sudo systemctl start nolusd
 ```
-______________________
+______________________________
 # This Our Snapshot
 https://snapshot.nolus.belajar.codes/nolus/
+
+______________________________
+        
 
