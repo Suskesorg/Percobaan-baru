@@ -46,7 +46,7 @@ sudo systemctl stop nolusd
 ### Make Snapshot File
 ```
 cd $HOME/.nolus
-tar -cf - data | lz4 > /var/www/snapshot/planq/planq-snapshot-$(date +%Y%m%d).tar.lz4
+tar -cf - data | lz4 > /var/www/snapshot/nolus/nolus-snapshot-$(date +%Y%m%d).tar.lz4
 ```
 
 ### Make Snapshot Config
