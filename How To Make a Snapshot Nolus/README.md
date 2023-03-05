@@ -50,13 +50,13 @@ tar -cf - data | lz4 > /var/www/snapshot/planq/planq-snapshot-$(date +%Y%m%d).ta
 ```
 
 ### Make Snapshot Config
-**Warning** : Please change <Your Domain> to your Snapshot Domain like snapshot.nolus.example.com
+**Warning** : Please change <Your-Domain> to your Snapshot Domain like snapshot.nolus.example.com
 ```
-sudo tee /etc/nginx/sites-enabled/<Your Domain>.conf >/dev/null <<EOF
+sudo tee /etc/nginx/sites-enabled/<Your-Domain>.conf >/dev/null <<EOF
 server {
         root /var/www/html;
         index index.html index.htm index.nginx-debian.html;
-        server_name <Your Domain>; 
+        server_name <Your-Domain>; 
 
 
         location / {
