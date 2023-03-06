@@ -24,22 +24,22 @@ sleep 2
 
 # Set Vars Relayer
 if [ ! $Snapshot_Domain_Nolus ]; then
-        read -p "ENTER YOUR RELAYER NAME : " $RELAYER_NAME_NOLUS
+        read -p "ENTER RELAYER_NAME_NOLUS : " $RELAYER_NAME_NOLUS
         echo 'export $RELAYER_NAME_NOLUS='$RELAYER_NAME_NOLUS >> $HOME/.bash_profile
         
 fi
 echo ""
-echo -e "YOUR RELAYER NAME : \e[1m\e[35m$RELAYER_NAME_NOLUS\e[0m"
+echo -e "YOUR RELAYER_NAME_NOLUS : \e[1m\e[35m$RELAYER_NAME_NOLUS\e[0m"
 echo ""
 
 # Set Vars Phrase
 if [ ! $Snapshot_Domain_Nolus ]; then
-        read -p "ENTER YOUR PHRASE WALLET : " $PHRASE_WALLET_NOLUSRELAYER
-        echo 'export $PHRASE_WALLET_NOLUSRELAYER='$PHRASE_WALLET_NOLUSRELAYER >> $HOME/.bash_profile
+        read -p "ENTER YOUR PHRASE_WALLET_NOLUS : " $PHRASE_WALLET_NOLUS
+        echo 'export $PHRASE_WALLET_NOLUS='$PHRASE_WALLET_NOLUS >> $HOME/.bash_profile
         
 fi
 echo ""
-echo -e "YOUR PHRASE WALLET : \e[1m\e[35m******\e[0m"
+echo -e "YOUR $PHRASE_WALLET_NOLUS : \e[1m\e[35m$PHRASE_WALLET_NOLUS\e[0m"
 echo ""
 
 # Prepare
@@ -182,12 +182,12 @@ EOF
 
 # Add relayer wallet A
 sudo tee $HOME/.hermes/keys/keys-A.json > /dev/null <<EOF
-${PHRASE_WALLET_NOLUSRELAYER}
+${PHRASE_WALLET_NOLUS}
 EOF
 
 # Add relayer wallet B
 sudo tee $HOME/.hermes/keys/keys-B.json > /dev/null <<EOF
-${PHRASE_WALLET_NOLUSRELAYER}
+${PHRASE_WALLET_NOLUS}
 EOF
 
 # Recover wallets using mnemonic files
