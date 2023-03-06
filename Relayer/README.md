@@ -70,8 +70,7 @@ address_type = { derivation = 'cosmos' }
 store_prefix = 'ibc'
 default_gas = 100000
 max_gas = 600000
-min_gas = 0.001
-gas_price = { price = 0.025, denom = 'unls' }
+gas_price = { price = 0.001, denom = 'unls' }
 gas_multiplier = 1.1
 max_msg_num = 30
 max_tx_size = 2097152
@@ -100,8 +99,7 @@ address_type = { derivation = 'cosmos' }
 store_prefix = 'ibc'
 default_gas = 100000
 max_gas = 600000
-min_gas = 0.001
-gas_price = { price = 0.025, denom = 'uosmo' }
+gas_price = { price = 0.001, denom = 'uosmo' }
 gas_multiplier = 1.1
 max_msg_num = 30
 max_tx_size = 2097152
