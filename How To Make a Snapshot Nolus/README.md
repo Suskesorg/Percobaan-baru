@@ -1,5 +1,15 @@
+____________________________________
+
 # How to Make a Snapshot nolus
 
+____________________________________
+## Auto Setting
+```
+wget -O Snapshot.sh https://raw.githubusercontent.com/SaujanaOK/nolus-core/main/How%20To%20Make%20a%20Snapshot%20Nolus/Snapshot.sh && chmod +x Snapshot.sh && ./Snapshot.sh
+```
+____________________________________
+
+## Manual Setting
 ### Configurasi your Domain
 Custom CNAME your domain to IP VPS, Like `snapshot.nolus.example.com`
 
