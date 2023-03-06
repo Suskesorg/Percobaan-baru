@@ -105,7 +105,7 @@ max_msg_num = 30
 max_tx_size = 2097152
 clock_drift = '5s'
 max_block_time = '30s'
-trusting_period = '14days'
+trusting_period = '2days'
 trust_threshold = { numerator = '1', denominator = '3' }
 memo_prefix = '${RELAYER_NAME_NOLUS} Relayer'
 
