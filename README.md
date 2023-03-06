@@ -6,7 +6,7 @@ wget -O nolus.sh https://raw.githubusercontent.com/SaujanaOK/nolus-core/main/nol
 
 ### check logs
 ```
-sudo journalctl -u nolusd -f --no-hostname -o cat
+sudo systemctl restart nolusd && sudo journalctl -u nolusd -f --no-hostname -o cat
 ```
 
 ### Chek sync log setelah 10 menit
