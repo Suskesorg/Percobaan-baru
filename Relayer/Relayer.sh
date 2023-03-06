@@ -26,6 +26,7 @@ sleep 2
 if [ ! $Snapshot_Domain_Nolus ]; then
         read -p "ENTER YOUR RELAYER NAME : " $RELAYER_NAME_NOLUS
         echo 'export $RELAYER_NAME_NOLUS='$RELAYER_NAME_NOLUS >> $HOME/.bash_profile
+        
 fi
 echo ""
 echo -e "YOUR RELAYER NAME : \e[1m\e[35m$RELAYER_NAME_NOLUS\e[0m"
@@ -35,6 +36,7 @@ echo ""
 if [ ! $Snapshot_Domain_Nolus ]; then
         read -p "ENTER YOUR PHRASE WALLET : " $PHRASE_WALLET_NOLUSRELAYER
         echo 'export $PHRASE_WALLET_NOLUSRELAYER='$PHRASE_WALLET_NOLUSRELAYER >> $HOME/.bash_profile
+        
 fi
 echo ""
 echo -e "YOUR PHRASE WALLET : \e[1m\e[35m******\e[0m"
