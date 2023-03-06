@@ -175,12 +175,23 @@ sudo systemctl restart hermesd
 journalctl -u hermesd -f -o cat
 ```
 
-# Find free channels
+## Find free channels
 ```
 hermes query channels --chain nolus-rilla
 hermes query channels --chain osmo-test-4
 ```
 
-## Done
+_________________________________
+
+## Uninstall hermes
+```
+sudo systemctl stop hermesd
+sudo systemctl disable hermesd
+sudo rm /etc/systemd/system/hermesd.service
+sudo systemctl daemon-reload
+rm -f $(which hermesd)
+rm -rf $HOME/.hermesd
+rm -rf $HOME/hermes
+```
 
 
