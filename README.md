@@ -130,7 +130,7 @@ __________________________________
 
 Unjail validator
 ```
-nolusd tx slashing unjail --from wallet --chain-id nolus-itn-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.025unls -y
+nolusd tx slashing unjail --from wallet --chain-id nolus-rila --gas-adjustment 1.4 --gas auto --gas-prices 0.025unls -y
 ```
 
 Jail reason
@@ -156,47 +156,47 @@ nolusd q staking validator $(nolusd keys show wallet --bech val -a)
 💲 Token management
 Withdraw rewards from all validators
 ```
-nolusd tx distribution withdraw-all-rewards --from wallet --chain-id nolus-itn-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.05unls -y
+nolusd tx distribution withdraw-all-rewards --from wallet --chain-id nolus-rila --gas-adjustment 1.4 --gas auto --gas-prices 0.05unls -y
 ```
 
 Withdraw commission and rewards from your validator
 ```
-nolusd tx distribution withdraw-rewards $(nolusd keys show wallet --bech val -a) --commission --from wallet --chain-id nolus-itn-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.025unls -y
+nolusd tx distribution withdraw-rewards $(nolusd keys show wallet --bech val -a) --commission --from wallet --chain-id nolus-rila --gas-adjustment 1.4 --gas auto --gas-prices 0.025unls -y
 ```
 
 Delegate tokens to yourself
 ```
-nolusd tx staking delegate $(nolusd keys show wallet --bech val -a) 1000000unls --from wallet --chain-id nolus-itn-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.025unls -y
+nolusd tx staking delegate $(nolusd keys show wallet --bech val -a) 1000000unls --from wallet --chain-id nolus-rila --gas-adjustment 1.4 --gas auto --gas-prices 0.025unls -y
 ```
 
 Delegate tokens to validator
 ```
-nolusd tx staking delegate <TO_VALOPER_ADDRESS> 1000000unls --from wallet --chain-id nolus-itn-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.025unls -y
+nolusd tx staking delegate <TO_VALOPER_ADDRESS> 1000000unls --from wallet --chain-id nolus-rila --gas-adjustment 1.4 --gas auto --gas-prices 0.025unls -y
 ```
 
 Redelegate your stake from one validator to another validator
 ```
-nolusd tx staking redelegate <srcValidatorAddress> <destValidatorAddress> 10000000unls --from wallet --chain-id nolus-itn-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.025unls -y
+nolusd tx staking redelegate <srcValidatorAddress> <destValidatorAddress> 10000000unls --from wallet --chain-id nolus-rila --gas-adjustment 1.4 --gas auto --gas-prices 0.025unls -y
 ```
 
 Redelegate your stake from another validator to yourself
 ```
-nolusd tx staking redelegate <srcValidatorAddress> $(nolusd keys show wallet --bech val -a) 1000000unls --from wallet --chain-id nolus-itn-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.025unls -y
+nolusd tx staking redelegate <srcValidatorAddress> $(nolusd keys show wallet --bech val -a) 1000000unls --from wallet --chain-id nolus-rila --gas-adjustment 1.4 --gas auto --gas-prices 0.025unls -y
 ```
 
 Redelegate your stake from yourself to another validator 
 ```
-nolusd tx staking redelegate $(nolusd keys show wallet --bech val -a) <destValidatorAddress> 1000000unls --from wallet --chain-id nolus-itn-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.025unls -y
+nolusd tx staking redelegate $(nolusd keys show wallet --bech val -a) <destValidatorAddress> 1000000unls --from wallet --chain-id nolus-rila --gas-adjustment 1.4 --gas auto --gas-prices 0.025unls -y
 ```
 
 Unbond tokens from your validator
 ```
-nolusd tx staking unbond $(nolusd keys show wallet --bech val -a) 1000000unls --from wallet --chain-id nolus-itn-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.025unls -y
+nolusd tx staking unbond $(nolusd keys show wallet --bech val -a) 1000000unls --from wallet --chain-id nolus-rila --gas-adjustment 1.4 --gas auto --gas-prices 0.025unls -y
 ```
 
 Send tokens to the wallet
 ```
-nolusd tx bank send wallet <TO_WALLET_ADDRESS> 1000000unls --from wallet --chain-id nolus-itn-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.025unls -y
+nolusd tx bank send wallet <TO_WALLET_ADDRESS> 1000000unls --from wallet --chain-id nolus-rila --gas-adjustment 1.4 --gas auto --gas-prices 0.025unls -y
 ```
 
 
@@ -213,22 +213,22 @@ nolusd query gov proposal 1
 
 Vote 'Yes'
 ```
-nolusd tx gov vote 1 yes --from wallet --chain-id nolus-itn-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.025unls -y
+nolusd tx gov vote 1 yes --from wallet --chain-id nolus-rila --gas-adjustment 1.4 --gas auto --gas-prices 0.025unls -y
 ```
 
 Vote 'No'
 ```
-nolusd tx gov vote 1 no --from wallet --chain-id nolus-itn-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.025unls -y
+nolusd tx gov vote 1 no --from wallet --chain-id nolus-rila --gas-adjustment 1.4 --gas auto --gas-prices 0.025unls -y
 ```
 
 Vote 'Abstain'
 ```
-nolusd tx gov vote 1 abstain --from wallet --chain-id nolus-itn-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.025unls -y
+nolusd tx gov vote 1 abstain --from wallet --chain-id nolus-rila --gas-adjustment 1.4 --gas auto --gas-prices 0.025unls -y
 ```
 
 Vote 'NoWithVeto'
 ```
-nolusd tx gov vote 1 nowithveto --from wallet --chain-id nolus-itn-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.025unls -y
+nolusd tx gov vote 1 nowithveto --from wallet --chain-id nolus-rila --gas-adjustment 1.4 --gas auto --gas-prices 0.025unls -y
 ```
 
 ⚡️ Utility
