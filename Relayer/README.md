@@ -147,14 +147,13 @@ EOF
 ```
 
 ## Add relayer wallet A
-Wallet A dan B masukan saja Phrase yang sama
 ```
 nano $HOME/.hermes/keys/keys-A.json
 ```
 
-## Add relayer wallet B
+## Copy file
 ```
-nano $HOME/.hermes/keys/keys-B.json
+cp $HOME/.hermes/keys/keys-A.json $HOME/.hermes/keys/keys-B.json
 ```
 
 ## Recover wallets using mnemonic files
