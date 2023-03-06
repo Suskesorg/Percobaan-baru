@@ -41,31 +41,6 @@ enabled = false
 [mode.channels]
 enabled = false
 
-# Specify the price per gas used of the fee to submit a transaction and
-# the denomination of the fee. 
-# 
-# The specified gas price should always be greater or equal to the `min-gas-price`
-# configured on the chain. This is to ensure that at least some minimal price is 
-# paid for each unit of gas per transaction.
-# 
-# Required
-gas_price = { price = 0.001, denom = 'stake' }
-
-# Multiply this amount with the gas estimate, used to compute the fee
-# and account for potential estimation error.
-#
-# The purpose of multiplying by `gas_multiplier` is to provide a bit of a buffer
-# to catch some of the cases when the gas estimation calculation is on the low
-# end. 
-# 
-# Example: With this setting set to 1.1, then if the estimated gas
-# is 80_000, then gas used to compute the fee will be adjusted to
-# 80_000 * 1.1 = 88_000.
-#
-# Default: 1.1, ie. the gas is increased by 10%
-# Minimum value: 1.0
-gas_multiplier = 1.1
-
 [mode.packets]
 enabled = true
 clear_interval = 100
@@ -95,6 +70,7 @@ address_type = { derivation = 'cosmos' }
 store_prefix = 'ibc'
 default_gas = 100000
 max_gas = 600000
+min-gas-price = 0
 gas_price = { price = 500, denom = 'unls' }
 gas_multiplier = 1.1
 max_msg_num = 30
@@ -124,6 +100,7 @@ address_type = { derivation = 'cosmos' }
 store_prefix = 'ibc'
 default_gas = 100000
 max_gas = 600000
+min-gas-price = 0
 gas_price = { price = 0.0026, denom = 'uosmo' }
 gas_multiplier = 1.1
 max_msg_num = 30
