@@ -1,3 +1,34 @@
+#!/bin/bash
+clear
+echo -e "\e[96m"       
+echo -e "  **********                    **                             "
+echo -e " **////////                                                    "
+echo -e "/**         ******   **   **    **  ******   *******   ******  "
+echo -e "/********* //////** /**  /**   /** //////** //**///** //////** "
+echo -e "////////**  ******* /**  /**   /**  *******  /**  /**  ******* "
+echo -e "       /** **////** /**  /** **/** **////**  /**  /** **////** "
+echo -e " ******** //********//******//*** //******** ***  /**//********"
+echo -e "////////   ////////  //////  ///   //////// ///   //  //////// "
+echo -e "\e[0m"
+
+echo "===================================================================" 
+echo -e '\e[36mGarapan      :\e[39m' Membuat Snapshot Nolus Core
+echo -e '\e[36mAuthor       :\e[39m' Saujana
+echo -e '\e[36mTelegram     :\e[39m' @SaujanaOK
+echo -e '\e[36mTwitter      :\e[39m' @SaujanaCrypto
+echo -e '\e[36mDiscord      :\e[39m' DEFFAN#0372
+echo -e '\e[36mGithub       :\e[39m' https://github.com/SaujanaOK/
+echo "===================================================================" 
+
+# Set Vars api
+if [ ! $Snapshot_Domain_Nolus ]; then
+        read -p "ENTER YOUR Snapshot Domain Nolus : " Snapshot_Domain_Nolus
+        echo 'export Snapshot_Domain_Nolus='$Snapshot_Domain_Nolus >> $HOME/.bash_profile
+fi
+echo ""
+echo -e "YOUR Snapshot Domain Nolus  : \e[1m\e[35m$Snapshot_Domain_Nolus\e[0m"
+echo ""
+
 # Install dependencies 1
 sudo apt update && sudo apt upgrade -y
 
@@ -30,11 +61,11 @@ sudo systemctl stop nolusd
 tar -cf - data | lz4 > /var/www/snapshot/nolus/snapshot_latest.tar.lz4
 
 # Make Snapshot Config
-sudo tee /etc/nginx/sites-enabled/$DomainSnapshotNolus.conf >/dev/null <<EOF
+sudo tee /etc/nginx/sites-enabled/${Snapshot_Domain_Nolus}.conf >/dev/null <<EOF
 server {
         root /var/www/html;
         index index.html index.htm index.nginx-debian.html;
-        server_name $DomainSnapshotNolus; 
+        server_name ${Snapshot_Domain_Nolus}; 
 
 
         location / {
