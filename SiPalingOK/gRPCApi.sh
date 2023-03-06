@@ -1,5 +1,4 @@
 #!/bin/bash
-
 clear
 echo -e "\e[96m"       
 echo -e "  **********                    **                             "
