@@ -33,48 +33,54 @@ echo ""
 # Install dependencies 1
 sudo apt update && sudo apt upgrade -y
 
-
 # Install dependencies 2
 sudo apt install nginx certbot python3-certbot-nginx -y
-
 
 # Install dependencies 3
 curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
 
-
 # Install dependencies 4
 sudo apt-get update && apt install -y nodejs git
-
 
 # Install dependencies 5
 curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | gpg --dearmor | sudo tee /usr/share/keyrings/yarnkey.gpg >/dev/null
 echo "deb [signed-by=/usr/share/keyrings/yarnkey.gpg] https://dl.yarnpkg.com/debian stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 
-
 # Install dependencies 6
 sudo apt-get update && sudo apt-get install yarn -y
 
+# Allow Port
+sudo ufw allow 443 && sudo ufw allow 80
+
+# Install PIP
+sudo apt install python3 python3-venv libaugeas0
+
+# Setup virtual
+sudo python3 -m venv /opt/certbot/
+sudo /opt/certbot/bin/pip install --upgrade pip
+
+# Install Apache
+sudo /opt/certbot/bin/pip install certbot certbot-apache
+
+# Install nginx
+sudo /opt/certbot/bin/pip install certbot certbot-nginx
 
 # Make Snapshot Folder
 cd /var/www/
 mkdir -p snapshot/nolus
 sudo apt install lz4
 
-
 # Stop Node
 cd $HOME/.nolus
 sudo systemctl stop nolusd
-
 
 # Make Snapshot File
 cd $HOME/.nolus
 tar -cf - data | lz4 > /var/www/snapshot/nolus/snapshot_latest.tar.lz4
 
-
 # Remove Snapshot Lama
 cd
 rm -rf /etc/nginx/sites-enabled/${Snapshot_Domain_Nolus}.conf
-
 
 # Make Snapshot Config
 sudo tee /etc/nginx/sites-enabled/${Snapshot_Domain_Nolus}.conf >/dev/null <<EOF
@@ -93,7 +99,6 @@ server {
     }
 }
 EOF
-
 
 # Restart Ngin and Node
 sudo systemctl start nginx
