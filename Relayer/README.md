@@ -1,4 +1,4 @@
 # Auto Setting
 ```
-wget -O Relayer.sh https://raw.githubusercontent.com/SaujanaOK/nolus-core/main/Relayer/Relayer.sh && chmod +x Relayer.sh && ./Relayer.sh
+wget -O HRelayer.sh https://raw.githubusercontent.com/SaujanaOK/nolus-core/main/Relayer/HRelayer.sh && chmod +x HRelayer.sh && ./HRelayer.sh
 ```
