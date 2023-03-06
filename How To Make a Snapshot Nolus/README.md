@@ -1,7 +1,7 @@
-# How to Make a Snapshot osmosis
+# How to Make a Snapshot nolus
 
 ### Configurasi your Domain
-Custom CNAME your domain to IP VPS, Like `snapshot.osmosis.example.com`
+Custom CNAME your domain to IP VPS, Like `snapshot.nolus.example.com`
 
 ### Instructions
 #### Install dependencies
@@ -33,23 +33,23 @@ sudo apt-get update && sudo apt-get install yarn -y
 ### Make Snapshot Folder
 ```
 cd /var/www/
-mkdir -p snapshot/osmosis
+mkdir -p snapshot/nolus
 sudo apt install lz4
 ```
 
 ### Stop Node
 ```
-cd $HOME/.osmosisd
-sudo systemctl stop osmosisd
+cd $HOME/.nolusd
+sudo systemctl stop nolusd
 ```
 
 ### Make Snapshot File
 ```
-tar -cf - data | lz4 > /var/www/snapshot/osmosis/snapshot_latest.tar.lz4
+tar -cf - data | lz4 > /var/www/snapshot/nolus/snapshot_latest.tar.lz4
 ```
 
 ### Make Snapshot Config
-**Noted** : Please change `<Your_Domain>` to your Snapshot Domain like `snapshot.osmosis.example.com`
+**Noted** : Please change `<Your_Domain>` to your Snapshot Domain like `snapshot.nolus.example.com`
 ```
 sudo tee /etc/nginx/sites-enabled/<Your_Domain>.conf >/dev/null <<EOF
 server {
@@ -78,27 +78,27 @@ And select your snapshot domain
 ### Restart Ngin and Node
 ```
 sudo systemctl start nginx
-sudo systemctl start osmosisd
+sudo systemctl start nolusd
 ```
 ______________________________
 # This Our Snapshot
-https://snapshot.osmosis.sarjananode.studio/osmosis/
+https://snapshot.nolus.sarjananode.studio/nolus/
 ______________________________
         
 ## How to Use our Snapshot
 ### Stop the service and reset the data
 ```
-sudo systemctl stop osmosisd
-cp $HOME/.osmosisd/data/priv_validator_state.json $HOME/.osmosisd/priv_validator_state.json.backup
-rm -rf $HOME/.osmosisd/data
+sudo systemctl stop nolusd
+cp $HOME/.nolusd/data/priv_validator_state.json $HOME/.nolusd/priv_validator_state.json.backup
+rm -rf $HOME/.nolusd/data
 ```
 ### Download our snapshot
 ```
-curl -L https://snapshot.osmosis.sarjananode.studio/osmosis/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.osmosisd
-mv $HOME/.osmosisd/priv_validator_state.json.backup $HOME/.osmosisd/data/priv_validator_state.json
+curl -L https://snapshot.nolus.sarjananode.studio/nolus/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.nolusd
+mv $HOME/.nolusd/priv_validator_state.json.backup $HOME/.nolusd/data/priv_validator_state.json
 ```
 
 ### Restart the service and check the log
 ```
-sudo systemctl start osmosisd && sudo journalctl -u osmosisd -f --no-hostname -o cat
+sudo systemctl start nolusd && sudo journalctl -u nolusd -f --no-hostname -o cat
 ```
