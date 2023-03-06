@@ -92,10 +92,10 @@ https://crew3.xyz/c/nolus/invite/szl85ZQ5Opq8F_Uj3_siu
 ### Jika ingin Edit existing validator
 ```
 nolusd tx staking edit-validator \
---moniker "YOUR_MONIKER_NAME" \
+--new-moniker "YOUR_MONIKER_NAME" \
 --identity "YOUR_KEYBASE_ID" \
 --details "YOUR_DETAILS" \
---website "YOUR_WEBSITE_URL"
+--website "YOUR_WEBSITE_URL" \
 --chain-id nolus-rila \
 --commission-rate 0.05 \
 --from wallet \
