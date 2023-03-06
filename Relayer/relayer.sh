@@ -1,3 +1,43 @@
+#!/bin/bash
+clear
+echo -e "\e[96m"       
+echo -e "  **********                    **                             "
+echo -e " **////////                                                    "
+echo -e "/**         ******   **   **    **  ******   *******   ******  "
+echo -e "/********* //////** /**  /**   /** //////** //**///** //////** "
+echo -e "////////**  ******* /**  /**   /**  *******  /**  /**  ******* "
+echo -e "       /** **////** /**  /** **/** **////**  /**  /** **////** "
+echo -e " ******** //********//******//*** //******** ***  /**//********"
+echo -e "////////   ////////  //////  ///   //////// ///   //  //////// "
+echo -e "\e[0m"
+
+echo "===================================================================" 
+echo -e '\e[36mGarapan      :\e[39m' Membuat Relayer Nolus Core
+echo -e '\e[36mAuthor       :\e[39m' Saujana
+echo -e '\e[36mTelegram     :\e[39m' @SaujanaOK
+echo -e '\e[36mTwitter      :\e[39m' @SaujanaCrypto
+echo -e '\e[36mDiscord      :\e[39m' DEFFAN#0372
+echo -e '\e[36mGithub       :\e[39m' https://github.com/SaujanaOK/
+echo "===================================================================" 
+
+# Set Vars Relayer
+if [ ! $Snapshot_Domain_Nolus ]; then
+        read -p "ENTER YOUR RELAYER NAME : " $RELAYER_NAME_NOLUS
+        echo 'export $RELAYER_NAME_NOLUS='$RELAYER_NAME_NOLUS >> $HOME/.bash_profile
+fi
+echo ""
+echo -e "YOUR RELAYER NAME : \e[1m\e[35m$RELAYER_NAME_NOLUS\e[0m"
+echo ""
+
+# Set Vars Phrase
+if [ ! $Snapshot_Domain_Nolus ]; then
+        read -p "ENTER YOUR PHRASE WALLET : " $PHRASE_WALLET_NOLUSRELAYER
+        echo 'export $PHRASE_WALLET_NOLUSRELAYER='$PHRASE_WALLET_NOLUSRELAYER >> $HOME/.bash_profile
+fi
+echo ""
+echo -e "YOUR PHRASE WALLET : \e[1m\e[35m******\e[0m"
+echo ""
+
 # Set up variables
 
 # Update system
@@ -74,7 +114,7 @@ clock_drift = '5s'
 max_block_time = '30s'
 trusting_period = '2days'
 trust_threshold = { numerator = '1', denominator = '3' }
-memo_prefix = '${RELAYER_NAME} Relayer'
+memo_prefix = '${RELAYER_NAME_NOLUS} Relayer'
 
 [chains.packet_filter]
 policy = 'allow'
@@ -103,7 +143,7 @@ clock_drift = '5s'
 max_block_time = '30s'
 trusting_period = '14days'
 trust_threshold = { numerator = '1', denominator = '3' }
-memo_prefix = '${RELAYER_NAME} Relayer'
+memo_prefix = '${RELAYER_NAME_NOLUS} Relayer'
 
 [chains.packet_filter]
 policy = 'allow'
@@ -137,12 +177,12 @@ EOF
 
 # Add relayer wallet A
 sudo tee $HOME/.hermes/keys/keys-A.json > /dev/null <<EOF
-${relayerphrase}
+${$PHRASE_WALLET_NOLUSRELAYER}
 EOF
 
 # Add relayer wallet B
 sudo tee $HOME/.hermes/keys/keys-B.json > /dev/null <<EOF
-${relayerphrase}
+${$PHRASE_WALLET_NOLUSRELAYER}
 EOF
 
 # Recover wallets using mnemonic files
