@@ -20,6 +20,8 @@ echo -e '\e[36mDiscord      :\e[39m' DEFFAN#0372
 echo -e '\e[36mGithub       :\e[39m' https://github.com/SaujanaOK/
 echo "===================================================================" 
 
+sleep 2
+
 # Set Vars Relayer
 if [ ! $Snapshot_Domain_Nolus ]; then
         read -p "ENTER YOUR RELAYER NAME : " $RELAYER_NAME_NOLUS
@@ -38,7 +40,6 @@ echo ""
 echo -e "YOUR PHRASE WALLET : \e[1m\e[35m******\e[0m"
 echo ""
 
-# Set up variables
 
 # Update system
 sudo apt update && sudo apt upgrade -y
