@@ -1,5 +1,3 @@
-nolusd tx staking delegate nolusvaloper1cjp6a4qs2qkqmena9npsyze4p907lg8pp40gvr 1000000unls --from wallet --chain-id nolus-rila --gas-adjustment 1.4 --gas auto --fees 675unls -y
-
 # Auto Install
 ```
 wget -O nolus.sh https://raw.githubusercontent.com/SaujanaOK/nolus-core/main/nolus.sh && chmod +x nolus.sh && ./nolus.sh
