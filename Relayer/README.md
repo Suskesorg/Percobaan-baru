@@ -19,13 +19,10 @@ rm -rf $HOME/hermes-v1.2.0-x86_64-unknown-linux-gnu.zip
 hermes version
 ```
 
-# Make hermes home dir
-```
-mkdir $HOME/.hermes
-```
-
 # Create hermes config
 ```
+rm -rf $HOME/.hermes
+mkdir $HOME/.hermes
 sudo tee $HOME/.hermes/config.toml > /dev/null <<EOF
 [global]
 log_level = 'info'
