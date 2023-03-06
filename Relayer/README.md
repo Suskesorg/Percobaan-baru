@@ -89,7 +89,7 @@ list = [
 [[chains]]
 ### CHAIN_B ###
 id = 'osmo-test-4'
-rpc_addr = 'https://rpc-test.osmosis.zone'
+rpc_addr = 'https://osmosis-testnet-archive.allthatnode.com:26657'
 grpc_addr =  'tcp://grpc-test.osmosis.zone:443'
 websocket_addr = 'wss://rpc-test.osmosis.zone/websocket'
 rpc_timeout = '10s'
