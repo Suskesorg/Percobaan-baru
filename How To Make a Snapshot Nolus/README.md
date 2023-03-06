@@ -39,7 +39,7 @@ sudo apt install lz4
 
 ### Stop Node
 ```
-cd $HOME/.nolusd
+cd $HOME/.nolus
 sudo systemctl stop nolusd
 ```
 
@@ -89,13 +89,13 @@ ______________________________
 ### Stop the service and reset the data
 ```
 sudo systemctl stop nolusd
-cp $HOME/.nolusd/data/priv_validator_state.json $HOME/.nolusd/priv_validator_state.json.backup
-rm -rf $HOME/.nolusd/data
+cp $HOME/.nolus/data/priv_validator_state.json $HOME/.nolus/priv_validator_state.json.backup
+rm -rf $HOME/.nolus/data
 ```
 ### Download our snapshot
 ```
-curl -L https://snapshot.nolus.sarjananode.studio/nolus/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.nolusd
-mv $HOME/.nolusd/priv_validator_state.json.backup $HOME/.nolusd/data/priv_validator_state.json
+curl -L https://snapshot.nolus.sarjananode.studio/nolus/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.nolus
+mv $HOME/.nolus/priv_validator_state.json.backup $HOME/.nolus/data/priv_validator_state.json
 ```
 
 ### Restart the service and check the log
