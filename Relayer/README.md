@@ -60,8 +60,8 @@ port = 3001
 [[chains]]
 ### CHAIN_A ###
 id = 'nolus-rila'
-rpc_addr = 'http://rpc.nolus.deffanok.me'
-grpc_addr = 'http://grpc.nolus.deffanok.me'
+rpc_addr = 'https://nolus-testnet.rpc.kjnodes.com:443'
+grpc_addr = 'http://127.0.0.1:9090'
 websocket_addr = 'ws://127.0.0.1:43657/websocket'
 rpc_timeout = '10s'
 account_prefix = 'nolus'
