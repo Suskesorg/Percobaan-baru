@@ -29,36 +29,52 @@ echo ""
 echo -e "YOUR Snapshot Domain Nolus  : \e[1m\e[35m$Snapshot_Domain_Nolus\e[0m"
 echo ""
 
+
 # Install dependencies 1
 sudo apt update && sudo apt upgrade -y
+
 
 # Install dependencies 2
 sudo apt install nginx certbot python3-certbot-nginx -y
 
+
 # Install dependencies 3
 curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
 
+
 # Install dependencies 4
 sudo apt-get update && apt install -y nodejs git
+
 
 # Install dependencies 5
 curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | gpg --dearmor | sudo tee /usr/share/keyrings/yarnkey.gpg >/dev/null
 echo "deb [signed-by=/usr/share/keyrings/yarnkey.gpg] https://dl.yarnpkg.com/debian stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 
+
 # Install dependencies 6
 sudo apt-get update && sudo apt-get install yarn -y
+
 
 # Make Snapshot Folder
 cd /var/www/
 mkdir -p snapshot/nolus
 sudo apt install lz4
 
+
 # Stop Node
 cd $HOME/.nolus
 sudo systemctl stop nolusd
 
-### Make Snapshot File
+
+# Make Snapshot File
+cd $HOME/.nolus
 tar -cf - data | lz4 > /var/www/snapshot/nolus/snapshot_latest.tar.lz4
+
+
+# Remove Snapshot Lama
+cd
+rm -rf /etc/nginx/sites-enabled/${Snapshot_Domain_Nolus}.conf
+
 
 # Make Snapshot Config
 sudo tee /etc/nginx/sites-enabled/${Snapshot_Domain_Nolus}.conf >/dev/null <<EOF
@@ -78,10 +94,12 @@ server {
 }
 EOF
 
+
 # Restart Ngin and Node
 sudo systemctl start nginx
 sudo systemctl start nolusd
 
-# Install SSL
-sudo certbot --nginx --register-unsafely-without-email
+echo '=============== Auto Setting Snapshot Nolus Done ==================='
+echo -e "Silahkan Lanjutkan memasang SSL : \e[1m\e[35msudo certbot --nginx --register-unsafely-without-email\e[0m"
 
+# End
