@@ -180,12 +180,12 @@ EOF
 
 # Add relayer wallet A
 sudo tee $HOME/.hermes/keys/keys-A.json > /dev/null <<EOF
-${$PHRASE_WALLET_NOLUSRELAYER}
+${PHRASE_WALLET_NOLUSRELAYER}
 EOF
 
 # Add relayer wallet B
 sudo tee $HOME/.hermes/keys/keys-B.json > /dev/null <<EOF
-${$PHRASE_WALLET_NOLUSRELAYER}
+${PHRASE_WALLET_NOLUSRELAYER}
 EOF
 
 # Recover wallets using mnemonic files
