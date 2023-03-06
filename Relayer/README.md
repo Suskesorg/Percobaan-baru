@@ -1,15 +1,15 @@
-# Set Variabel
+## Set Variabel
 ```
 RELAYER_NAME_NOLUS=<Nama_Kamu>
 ```
 
-# Update system dan Install unzip
+## Update system dan Install unzip
 ```
 sudo apt update && sudo apt upgrade -y
 sudo apt install unzip -y
 ```
 
-# Download Hermes
+## Download Hermes
 ```
 cd $HOME
 wget https://github.com/informalsystems/hermes/releases/download/v1.2.0/hermes-v1.2.0-x86_64-unknown-linux-gnu.zip
@@ -19,7 +19,7 @@ rm -rf $HOME/hermes-v1.2.0-x86_64-unknown-linux-gnu.zip
 hermes version
 ```
 
-# Create hermes config
+## Create hermes config
 ```
 rm -rf $HOME/.hermes
 mkdir $HOME/.hermes
@@ -70,7 +70,7 @@ address_type = { derivation = 'cosmos' }
 store_prefix = 'ibc'
 default_gas = 100000
 max_gas = 600000
-gas_price = { price = 0.001, denom = 'unls' }
+gas_price = { price = 500, denom = 'unls' }
 gas_multiplier = 1.1
 max_msg_num = 30
 max_tx_size = 2097152
@@ -99,7 +99,7 @@ address_type = { derivation = 'cosmos' }
 store_prefix = 'ibc'
 default_gas = 100000
 max_gas = 600000
-gas_price = { price = 0.001, denom = 'uosmo' }
+gas_price = { price = 0.0026, denom = 'uosmo' }
 gas_multiplier = 1.1
 max_msg_num = 30
 max_tx_size = 2097152
@@ -117,17 +117,17 @@ list = [
 EOF
 ```
 
-# Validate Configuration
+## Validate Configuration
 ```
 hermes config validate
 ```
 
-# Perform a health check
+## Perform a health check
 ```
 hermes health-check
 ```
 
-# Create hermes service daemon
+## Create hermes service daemon
 ```
 sudo tee /etc/systemd/system/hermesd.service > /dev/null <<EOF
 [Unit]
@@ -146,31 +146,31 @@ WantedBy=multi-user.target
 EOF
 ```
 
-# Add relayer wallet A
+## Add relayer wallet A
 Wallet A dan B masukan saja Phrase yang sama
 ```
 nano $HOME/.hermes/keys/keys-A.json
 ```
 
-# Add relayer wallet B
+## Add relayer wallet B
 ```
 nano $HOME/.hermes/keys/keys-B.json
 ```
 
-# Recover wallets using mnemonic files
+## Recover wallets using mnemonic files
 ```
 hermes keys add --chain nolus-rila --mnemonic-file $HOME/.hermes/keys/keys-A.json
 hermes keys add --chain osmo-test-4 --mnemonic-file $HOME/.hermes/keys/keys-B.json
 ```
 
-# Restart hermes
+## Restart hermes
 ```
 sudo systemctl daemon-reload
 sudo systemctl enable hermesd
 sudo systemctl restart hermesd
 ```
 
-# Check hermes logs
+## Check hermes logs
 ```
 journalctl -u hermesd -f -o cat
 ```
@@ -181,6 +181,6 @@ hermes query channels --chain nolus-rilla
 hermes query channels --chain osmo-test-4
 ```
 
-# Done
+## Done
 
 
