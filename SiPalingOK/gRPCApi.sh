@@ -1,18 +1,5 @@
 #!/bin/bash
 
-sleep 2
-# Unset Vars
-unset API_Domain
-unset RPC_Domain
-unset gRPC_Domain
-unset ApiPort
-unset RPCPort
-unset gRPCPORT
-apt-get clean
-sudo apt-get autoclean
-sudo apt-get autoremove
-sudo apt-get install localpurge
-
 clear
 echo -e "\e[96m"       
 echo -e "  **********                    **                             "
@@ -35,63 +22,63 @@ echo -e '\e[36mGithub       :\e[39m' https://github.com/SaujanaOK/
 echo "===================================================================" 
 
 # Set Vars api
-if [ ! $API_Domain ]; then
-        read -p "ENTER YOUR API_Domain : " API_Domain
-        echo 'export API_Domain='$API_Domain >> $HOME/.bash_profile
+if [ ! $API_Domain_Nolus ]; then
+        read -p "ENTER YOUR API_Domain_Nolus : " API_Domain_Nolus
+        echo 'export API_Domain_Nolus='$API_Domain_Nolus >> $HOME/.bash_profile
 fi
 echo ""
-echo -e "YOUR API_Domain  : \e[1m\e[35m$API_Domain\e[0m"
+echo -e "YOUR API_Domain_Nolus  : \e[1m\e[35m$API_Domain_Nolus\e[0m"
 echo ""
 
 
 # Set Vars RPC
-if [ ! $RPC_Domain ]; then
-        read -p "ENTER YOUR RPC_Domain : " RPC_Domain
-        echo 'export RPC_Domain='$RPC_Domain >> $HOME/.bash_profile
+if [ ! $RPC_Domain_Nolus ]; then
+        read -p "ENTER YOUR RPC_Domain_Nolus : " RPC_Domain_Nolus
+        echo 'export RPC_Domain_Nolus='$RPC_Domain_Nolus >> $HOME/.bash_profile
 
 fi
 echo ""
-echo -e "YOUR RPC_Domain  : \e[1m\e[35m$RPC_Domain\e[0m"
+echo -e "YOUR RPC_Domain_Nolus  : \e[1m\e[35m$RPC_Domain_Nolus\e[0m"
 echo ""
 
 # Set Vars gRPC
 if [ ! $gRPC_Domain ]; then
-        read -p "ENTER YOUR gRPC_Domain : " gRPC_Domain
-        echo 'export gRPC_Domain='$gRPC_Domain >> $HOME/.bash_profile
+        read -p "ENTER YOUR gRPC_Domain_Nolus : " gRPC_Domain_Nolus
+        echo 'export gRPC_Domain_Nolus='$gRPC_Domain_Nolus >> $HOME/.bash_profile
 
 fi
 echo ""
-echo -e "YOUR gRPC_Domain : \e[1m\e[35m$gRPC_Domain \e[0m"
+echo -e "YOUR gRPC_Domain_Nolus : \e[1m\e[35m$gRPC_Domain_Nolus \e[0m"
 echo ""
 
 # Set Vars PORT API
 if [ ! $ApiPort ]; then
-        read -p "Masukkan Port Api kamu Boss Q : " ApiPort
-        echo 'export ApiPort='$ApiPort >> $HOME/.bash_profile
+        read -p "Masukkan Port Api Nolus : " ApiPort_Nolus
+        echo 'export ApiPort_Nolus='$ApiPort_Nolus >> $HOME/.bash_profile
 
 fi
 echo ""
-echo -e "Port Api Kamu benar kan? : \e[1m\e[35m$ApiPort \e[0m"
+echo -e "Port Api Nolus : \e[1m\e[35m$ApiPort_Nolus \e[0m"
 echo ""
 
 # Set Vars PORT RPC
-if [ ! $RPCPort ]; then
-        read -p "Masukkan Port RPC kamu Boss Q  : " RPCPort
-        echo 'export RPCPort='$RPCPort >> $HOME/.bash_profile
+if [ ! $RPCPort_Nolus ]; then
+        read -p "Masukkan Port RPC Nolus  : " RPCPort_Nolus
+        echo 'export RPCPort_Nolus='$RPCPort_Nolus >> $HOME/.bash_profile
 
 fi
 echo ""
-echo -e "Port RPC Kamu benar kan? : \e[1m\e[35m$RPCPort \e[0m"
+echo -e "Port RPC Nolus : \e[1m\e[35m$RPCPort_Nolus \e[0m"
 echo ""
 
 # Set Vars PORT gRPC
-if [ ! $gRPCPORT ]; then
-        read -p "Masukkan Port gRPC kamu Boss Q  : " gRPCPORT
-        echo 'export gRPCPORT='$gRPCPORT >> $HOME/.bash_profile
+if [ ! $gRPCPORT_Nolus ]; then
+        read -p "Masukkan Port gRPC Nolus : " gRPCPORT_Nolus
+        echo 'export gRPCPORT_Nolus='$gRPCPORT_Nolus >> $HOME/.bash_profile
 
 fi
 echo ""
-echo -e "Port gRPC Kamu benar kan? : \e[1m\e[35m$gRPCPORT \e[0m"
+echo -e "Port gRPC Nolus : \e[1m\e[35m$gRPCPORT_Nolus \e[0m"
 echo ""
 
 # Package
@@ -118,14 +105,14 @@ sudo /opt/certbot/bin/pip install certbot certbot-nginx
 sudo ln -s /opt/certbot/bin/certbot /usr/bin/certbot
 
 # Remove file
-rm -rf /etc/nginx/sites-enabled/${API_Domain}.conf
-rm -rf /etc/nginx/sites-enabled/${RPC_Domain}.conf
-rm -rf /etc/nginx/sites-enabled/${gRPC_Domain}.conf
+rm -rf /etc/nginx/sites-enabled/${API_Domain_Nolus}.conf
+rm -rf /etc/nginx/sites-enabled/${RPC_Domain_Nolus}.conf
+rm -rf /etc/nginx/sites-enabled/${gRPC_Domain_Nolus}.conf
 
 # Create API Config
-sudo tee /etc/nginx/sites-enabled/${API_Domain}.conf >/dev/null <<EOF
+sudo tee /etc/nginx/sites-enabled/${API_Domain_Nolus}.conf >/dev/null <<EOF
 server {
-    server_name ${API_Domain};
+    server_name ${API_Domain_Nolus};
     listen 80;
     location / {
         add_header Access-Control-Allow-Origin *;
@@ -136,16 +123,16 @@ server {
         proxy_set_header   X-Forwarded-For  \$proxy_add_x_forwarded_for;
         proxy_set_header   Host             \$host;
 
-        proxy_pass http://0.0.0.0:$ApiPort;
+        proxy_pass http://0.0.0.0:$ApiPort_Nolus;
 
     }
 }
 EOF
 
 # Create RPC Config
-sudo tee /etc/nginx/sites-enabled/${RPC_Domain}.conf >/dev/null <<EOF
+sudo tee /etc/nginx/sites-enabled/${RPC_Domain_Nolus}.conf >/dev/null <<EOF
 server {
-    server_name ${RPC_Domain};
+    server_name ${RPC_Domain_Nolus};
     listen 80;
     location / {
         add_header Access-Control-Allow-Origin *;
@@ -156,16 +143,16 @@ server {
         proxy_set_header   X-Forwarded-For  \$proxy_add_x_forwarded_for;
         proxy_set_header   Host             \$host;
 
-        proxy_pass http://127.0.0.1:$RPCPort;
+        proxy_pass http://127.0.0.1:$RPCPort_Nolus;
 
     }
 }
 EOF
 
 # Create gRPC Config
-sudo tee /etc/nginx/sites-enabled/${gRPC_Domain}.conf >/dev/null <<EOF
+sudo tee /etc/nginx/sites-enabled/${gRPC_Domain_Nolus}.conf >/dev/null <<EOF
 server {
-    server_name ${gRPC_Domain};
+    server_name ${gRPC_Domain_Nolus};
     listen 80;
     location / {
         add_header Access-Control-Allow-Origin *;
@@ -176,7 +163,7 @@ server {
         proxy_set_header   X-Forwarded-For  \$proxy_add_x_forwarded_for;
         proxy_set_header   Host             \$host;
 
-        proxy_pass http://0.0.0.0:$gRPCPORT;
+        proxy_pass http://0.0.0.0:$gRPCPORT_Nolus;
 
     }
 }
