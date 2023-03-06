@@ -27,6 +27,7 @@ Pastikan settingan api seperti pada gambar, lalu save CTRL + X dan Y
 ## Restart Node Nolus
 ```
 sudo systemctl restart nolusd
+sudo systemctl restart nginx
 ```
 
 ## Done
