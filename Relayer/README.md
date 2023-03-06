@@ -23,6 +23,7 @@ hermes version
 ```
 rm -rf $HOME/.hermes
 mkdir $HOME/.hermes
+
 sudo tee $HOME/.hermes/config.toml > /dev/null <<EOF
 [global]
 log_level = 'info'
