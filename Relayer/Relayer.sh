@@ -40,6 +40,8 @@ echo ""
 echo -e "YOUR PHRASE WALLET : \e[1m\e[35m******\e[0m"
 echo ""
 
+# Prepare
+source $HOME/.bash_profile
 
 # Update system
 sudo apt update && sudo apt upgrade -y
