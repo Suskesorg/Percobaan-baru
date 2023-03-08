@@ -181,12 +181,6 @@ hermes query channels --chain nolus-rilla
 hermes query channels --chain osmo-test-4
 ```
 
-## Create connection
-```
-hermes create connection --a-chain nolus-rila --b-chain osmo-test-4
-hermes create connection --b-chain osmo-test-4 --a-chain nolus-rila  
-```
-
 ## Create Client
 ```
 hermes create client --host-chain nolus-rila --reference-chain osmo-test-4
@@ -194,6 +188,11 @@ hermes create client --host-chain osmo-test-4 --reference-chain nolus-rila
 ```
 
 
+## Create connection
+```
+hermes create connection --a-chain nolus-rila --b-chain osmo-test-4
+hermes create connection --b-chain osmo-test-4 --a-chain nolus-rila  
+```
 _________________________________
 
 ## Uninstall hermes
