@@ -59,35 +59,6 @@ port = 3001
 
 [[chains]]
 ### CHAIN_A ###
-id = 'nolus-rila'
-rpc_addr = 'https://nolus-testnet.rpc.kjnodes.com:443'
-grpc_addr = 'http://127.0.0.1:9090'
-websocket_addr = 'ws://127.0.0.1:43657/websocket'
-rpc_timeout = '10s'
-account_prefix = 'nolus'
-key_name = 'wallet'
-address_type = { derivation = 'cosmos' }
-store_prefix = 'ibc'
-default_gas = 100000
-max_gas = 600000
-gas_price = { price = 500, denom = 'unls' }
-gas_multiplier = 1.1
-max_msg_num = 30
-max_tx_size = 2097152
-clock_drift = '5s'
-max_block_time = '30s'
-trusting_period = '2days'
-trust_threshold = { numerator = '1', denominator = '3' }
-memo_prefix = '${RELAYER_NAME_NOLUS} Relayer'
-
-[chains.packet_filter]
-policy = 'allow'
-list = [
-  ['transfer', 'channel-0'], # Osmosis
-]
-
-[[chains]]
-### CHAIN_B ###
 id = 'osmo-test-4'
 rpc_addr = 'https://osmosis-testnet-archive.allthatnode.com:26657'
 grpc_addr =  'tcp://grpc-test.osmosis.zone:443'
@@ -113,7 +84,39 @@ memo_prefix = '${RELAYER_NAME_NOLUS} Relayer'
 policy = 'allow'
 list = [
   ['transfer', 'channel-1837'], # nolus
+  ['transfer', 'channel-0'], # Osmosis
 ]
+
+### CHAIN_B ###
+id = 'nolus-rila'
+rpc_addr = 'https://nolus-testnet.rpc.kjnodes.com:443'
+grpc_addr = 'http://127.0.0.1:9090'
+websocket_addr = 'ws://127.0.0.1:43657/websocket'
+rpc_timeout = '10s'
+account_prefix = 'nolus'
+key_name = 'wallet'
+address_type = { derivation = 'cosmos' }
+store_prefix = 'ibc'
+default_gas = 100000
+max_gas = 600000
+gas_price = { price = 500, denom = 'unls' }
+gas_multiplier = 1.1
+max_msg_num = 30
+max_tx_size = 2097152
+clock_drift = '5s'
+max_block_time = '30s'
+trusting_period = '2days'
+trust_threshold = { numerator = '1', denominator = '3' }
+memo_prefix = '${RELAYER_NAME_NOLUS} Relayer'
+
+[chains.packet_filter]
+policy = 'allow'
+list = [
+  ['transfer', 'channel-0'], # Osmosis
+  ['transfer', 'channel-1837'], # nolus
+]
+
+[[chains]]
 EOF
 ```
 
