@@ -171,20 +171,20 @@ WantedBy=multi-user.target
 EOF
 ```
 
-## Add relayer wallet A
+## Add your Phrase
 ```
-nano $HOME/.hermes/keys/keys-A.json
+nano $HOME/.hermes/keys/nolus-rila.mnemonic
 ```
 
 ## Copy file
 ```
-cp $HOME/.hermes/keys/keys-A.json $HOME/.hermes/keys/keys-B.json
+cp $HOME/.hermes/keys/nolus-rila.mnemonic $HOME/.hermes/keys/osmo-test-4.mnemonic
 ```
 
 ## Recover wallets using mnemonic files
 ```
-hermes keys add --chain nolus-rila --mnemonic-file $HOME/.hermes/keys/keys-A.json
-hermes keys add --chain osmo-test-4 --mnemonic-file $HOME/.hermes/keys/keys-B.json
+hermes keys add --chain nolus-rila --mnemonic-file $HOME/.hermes/keys/nolus-rila.mnemonic
+hermes keys add --chain osmo-test-4 --mnemonic-file $HOME/.hermes/keys/osmo-test-4.mnemonic
 ```
 
 ## Restart hermes
