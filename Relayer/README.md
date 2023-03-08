@@ -175,10 +175,10 @@ cd $HOME/hermes
 hermes start
 ```
 
-## Find free channels
+## Find query channel client
 ```
-hermes query channels --chain nolus-rilla
-hermes query channels --chain osmo-test-4
+hermes query channel client --chain osmo-test-4 --port transfer --channel channel-0
+hermes query channel client --chain nolus-rilla --port transfer --channel channel-1837
 ```
 
 ## Create Client
