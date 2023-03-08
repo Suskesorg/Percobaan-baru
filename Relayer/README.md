@@ -109,7 +109,7 @@ memo_prefix = '${RELAYER_NAME_NOLUS} Relayer'
 [chains.packet_filter]
 policy = 'allow'
 list = [
-  ['transfer', 'channel-1837'], # nolus
+  ['transfer', 'channel-1837'], #nolus
 ]
 
 ### CHAIN_B ###
