@@ -6,24 +6,44 @@ RELAYER_NAME_NOLUS=<Nama_Kamu>
 ## Update system dan Install unzip
 ```
 sudo apt update && sudo apt upgrade -y
-sudo apt install unzip -y
 ```
+
+```
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+```
+
+```
+source "$HOME/.cargo/env"
+```
+
+```
+sudo apt-get install pkg-config libssl-dev
+```
+
+```
+sudo apt install librust-openssl-dev build-essential git
+```
+
+
 
 ## Download Hermes
 ```
-cd $HOME
-wget https://github.com/informalsystems/hermes/releases/download/v1.2.0/hermes-v1.2.0-x86_64-unknown-linux-gnu.zip
-unzip hermes-v1.2.0-x86_64-unknown-linux-gnu.zip
-sudo mv hermes /usr/local/bin
-rm -rf $HOME/hermes-v1.2.0-x86_64-unknown-linux-gnu.zip
-hermes version
+cargo install ibc-relayer-cli --bin hermes --locked
+mkdir -p $HOME/hermes
+git clone https://github.com/informalsystems/ibc-rs.git hermes
+cd hermes
+git checkout v1.2.0
+```
+
+```
+mkdir -p $HOME/.hermes
+mkdir -p $HOME/.hermes/keys
+cp config.toml $HOME/.hermes
 ```
 
 ## Create hermes config
 ```
-rm -rf $HOME/.hermes
-mkdir $HOME/.hermes
-
+rm -rf $HOME/.hermes/config.toml
 sudo tee $HOME/.hermes/config.toml > /dev/null <<EOF
 [global]
 log_level = 'info'
