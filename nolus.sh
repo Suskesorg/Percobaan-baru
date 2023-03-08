@@ -66,7 +66,6 @@ sudo apt -qy install curl git jq lz4 build-essential
 sudo apt -qy upgrade
 
 # Install GO
-rm -rf $HOME/go
 curl -Ls https://go.dev/dl/go1.19.6.linux-amd64.tar.gz | sudo tar -xzf - -C /usr/local
 eval $(echo 'export PATH=$PATH:/usr/local/go/bin' | sudo tee /etc/profile.d/golang.sh)
 eval $(echo 'export PATH=$PATH:$HOME/go/bin' | tee -a $HOME/.profile)
