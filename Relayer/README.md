@@ -32,7 +32,7 @@ cargo install ibc-relayer-cli --bin hermes --locked
 mkdir -p $HOME/hermes
 git clone https://github.com/informalsystems/ibc-rs.git hermes
 cd hermes
-git checkout v1.2.0
+git checkout v1.3.0
 ```
 
 ```
