@@ -152,25 +152,6 @@ hermes config validate
 hermes health-check
 ```
 
-## Create hermes service daemon
-```
-sudo tee /etc/systemd/system/hermesd.service > /dev/null <<EOF
-[Unit]
-Description=hermes
-After=network-online.target
-
-[Service]
-User=$USER
-ExecStart=$(which hermes) start
-Restart=on-failure
-RestartSec=3
-LimitNOFILE=65535
-
-[Install]
-WantedBy=multi-user.target
-EOF
-```
-
 ## Add your Phrase
 ```
 nano $HOME/.hermes/keys/nolus-rila.mnemonic
@@ -187,11 +168,9 @@ hermes keys add --chain nolus-rila --mnemonic-file $HOME/.hermes/keys/nolus-rila
 hermes keys add --chain osmo-test-4 --mnemonic-file $HOME/.hermes/keys/osmo-test-4.mnemonic
 ```
 
-## Restart hermes
+## Start hermes
 ```
-sudo systemctl daemon-reload
-sudo systemctl enable hermesd
-sudo systemctl restart hermesd
+cd $HOME/hermes
 hermes start
 ```
 
