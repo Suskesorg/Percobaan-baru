@@ -175,11 +175,6 @@ cd $HOME/hermes
 hermes start
 ```
 
-## Check hermes logs
-```
-journalctl -u hermesd -f -o cat
-```
-
 ## Find free channels
 ```
 hermes query channels --chain nolus-rilla
