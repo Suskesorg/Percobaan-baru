@@ -139,8 +139,6 @@ policy = 'allow'
 list = [
   ['transfer', 'channel-0'], # Osmosis
 ]
-
-[[chains]]
 EOF
 ```
 
