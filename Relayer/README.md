@@ -1,8 +1,3 @@
-## Set Variabel
-```
-RELAYER_NAME_NOLUS=<Nama_Kamu>
-```
-
 ## Update system dan Install unzip
 ```
 sudo apt update && sudo apt upgrade -y
@@ -45,6 +40,11 @@ cd
 ## Check hermes version
 ```
 hermes version
+```
+
+## Set Variabel
+```
+RELAYER_NAME_NOLUS=<Nama_Kamu>
 ```
 
 ## Create hermes config
