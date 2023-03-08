@@ -110,7 +110,6 @@ memo_prefix = '${RELAYER_NAME_NOLUS} Relayer'
 policy = 'allow'
 list = [
   ['transfer', 'channel-1837'], # nolus
-  ['transfer', 'channel-0'], # Osmosis
 ]
 
 ### CHAIN_B ###
@@ -139,7 +138,6 @@ memo_prefix = '${RELAYER_NAME_NOLUS} Relayer'
 policy = 'allow'
 list = [
   ['transfer', 'channel-0'], # Osmosis
-  ['transfer', 'channel-1837'], # nolus
 ]
 
 [[chains]]
