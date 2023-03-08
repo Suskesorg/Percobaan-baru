@@ -40,6 +40,10 @@ mkdir -p $HOME/.hermes
 mkdir -p $HOME/.hermes/keys
 cp config.toml $HOME/.hermes
 ```
+## Check hermes version
+```
+hermes version
+```
 
 ## Create hermes config
 ```
