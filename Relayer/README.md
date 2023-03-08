@@ -192,6 +192,7 @@ hermes keys add --chain osmo-test-4 --mnemonic-file $HOME/.hermes/keys/osmo-test
 sudo systemctl daemon-reload
 sudo systemctl enable hermesd
 sudo systemctl restart hermesd
+hermes start
 ```
 
 ## Check hermes logs
