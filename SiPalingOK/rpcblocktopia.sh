@@ -25,9 +25,7 @@ if [ ! $API_Domain_BonusBlock ]; then
         read -p "ENTER YOUR API_Domain_BonusBlock : " API_Domain_BonusBlock
         echo 'export API_Domain_BonusBlock='$API_Domain_BonusBlock >> $HOME/.bash_profile
 fi
-echo ""
-echo -e "YOUR API_Domain_BonusBlock  : \e[1m\e[35m$API_Domain_BonusBlock\e[0m"
-echo ""
+
 
 
 # Set Vars RPC
@@ -69,12 +67,14 @@ fi
 
 clear
 echo ""
+echo -e "YOUR API_Domain_BonusBlock  : \e[1m\e[35m$API_Domain_BonusBlock\e[0m"
 echo -e "YOUR RPC_Domain_BonusBlock  : \e[1m\e[35m$RPC_Domain_BonusBlock\e[0m"
 echo -e "YOUR gRPC_Domain_BonusBlock : \e[1m\e[35m$gRPC_Domain_BonusBlock \e[0m"
 echo -e "Port Api BonusBlock : \e[1m\e[35m$ApiPort_BonusBlock \e[0m"
 echo -e "Port RPC BonusBlock : \e[1m\e[35m$RPCPort_BonusBlock \e[0m"
 echo -e "Port gRPC BonusBlock : \e[1m\e[35m$gRPCPORT_BonusBlock \e[0m"
 echo ""
+sleep 2
 
 # Package
 sudo apt update && sudo apt upgrade -y
